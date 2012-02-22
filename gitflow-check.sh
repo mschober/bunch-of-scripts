@@ -1,6 +1,6 @@
 #!/bin/bash
 
-isGit() {
+gitCheck() {
     if [[ -f .git/config ]]; then
         IS_GIT=true
     else
@@ -8,12 +8,12 @@ isGit() {
     fi
 }
 
-isGit 
-echo IS_GIT is: $IS_GIT
-if [[ $IS_GIT ]]; then
+gitCheck 
+if [[ $IS_GIT == true ]]; then
     grep -q gitflow .git/config
 else
-    echo is not git
+    echo change to a git directory
+    exit
 fi
 
 if [[ $? -ne 0 ]]; then
