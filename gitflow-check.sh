@@ -1,23 +1,26 @@
 #!/bin/bash
 
-gitCheck() {
-    if [[ -f .git/config ]]; then
-        IS_GIT=true
-    else
-        IS_GIT=false
-    fi
+checkFlow(){
+    grep -q gitflow .git/config
+    IS_GIT=$?
+    echo IS_GIT is: $IS_GIT
 }
 
-gitCheck 
-if [[ $IS_GIT == true ]]; then
-    grep -q gitflow .git/config
-else
-    echo change to a git directory
-    exit
-fi
+doFlow() {
+    echo is not gitflow
+}
 
-if [[ $? -ne 0 ]]; then
-    echo is not gitflow 
+dontFlow() {
+    echo is not gitflow
+}
+
+if [[ -f .git/config ]];then
+    checkFlow
+    if [[ $IS_GIT == 0 ]]; then
+        doFlow
+    else
+        dontFlow
+    fi
 else
-    echo is gitflow 
+    echo is not git dir 
 fi
