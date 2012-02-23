@@ -3,7 +3,7 @@
 SOFTWARE=~/cj/perforce/software
 APP_PATH=$SOFTWARE/bin/mongo
 
-if [[ -n $1 ]]; then
+if [[ $1 == "local" ]]; then
     $APP_PATH $1
 else
     $APP_PATH build107.wl.cj.com 
