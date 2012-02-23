@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SOFTWARE=~/cj/perforce/software
+APP_PATH=$SOFTWARE/bin/mongo
+
+if [[ -n $1 ]]; then
+    $APP_PATH $1
+else
+    $APP_PATH build107.wl.cj.com 
+fi
