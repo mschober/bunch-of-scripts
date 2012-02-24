@@ -4,7 +4,6 @@ SOFTWARE=~/cj/perforce/software
 APP_PATH=$SOFTWARE/bin/mongo
 
 chooseCollection(){
-    
     if [[ -n $2 ]]; then
         COLLECTION=$2
     else
