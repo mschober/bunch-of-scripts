@@ -4,7 +4,9 @@ SOFTWARE=~/cj/perforce/software
 APP_PATH=$SOFTWARE/bin/mongo
 
 if [[ $1 == "local" ]]; then
-    $APP_PATH $1
+    $APP_PATH localhost
+elif [[ $1 == "dev" ]]; then
+    $APP_PATH busprod102.wl.cj.com:27003
 else
     $APP_PATH build107.wl.cj.com 
 fi
