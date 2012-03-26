@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rlwrap sqlplus build107_main_4/test@devdb07 $@

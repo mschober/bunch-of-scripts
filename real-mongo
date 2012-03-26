@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SOFTWARE=~/cj/perforce/software
+APP_PATH=$SOFTWARE/bin/mongo
+
+$APP_PATH $@

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rlwrap sqlplus `whoami`@devdb/test $@

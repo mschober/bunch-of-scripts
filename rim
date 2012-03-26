@@ -1,0 +1,64 @@
+#!/usr/bin/perl
+use strict;
+
+use Getopt::Long;
+
+GetOptions (
+    't|tag'   => \my $tag,
+    'p|parse' => \my $parse,
+    'e|edit'  => \my $edit,
+);
+
+$tag = 1 if $parse;
+
+my %files_to_open;
+
+my @lines = <STDIN>
+    unless @ARGV;
+push(@lines, @ARGV);
+
+my @parses = (
+    '\(.*\.(.*)\)',
+    '.*\.(.*)\.txt$',
+);
+for my $file (@lines) {
+    if ($parse) {
+        my $found = 0;
+        for (@parses) {
+            if ($file =~ /$_/) {
+                $file =$1;
+                $found = 1;
+                last;
+            }
+        }
+
+        next unless $found;
+    }
+
+    if ($tag && $file) {
+        $file = `findname '${file}_body.sql'`
+            ||  `findname '${file}.groovy'`
+            ||  `findname '${file}.java'`
+            ||  `findname '${file}.sql'`
+            ||  `findname '${file}*'`
+        ;
+        unless ($file) {
+            print("Unable to find file ${file}.(java|sql)\n");
+            next;
+        }
+    }
+
+    $files_to_open{$file} = 1;
+}
+
+sub run_cmd {
+    my $cmd = shift;
+    chomp($cmd);
+    print("$cmd\n");
+    system($cmd);
+}
+
+for my $file (keys %files_to_open) {
+    run_cmd("p4 edit $file") if $edit;
+    run_cmd("vim --servername DEV --remote $file"); 
+}
