@@ -5,19 +5,19 @@ APP_PATH=$SOFTWARE/bin/mongo
 
 chooseCollection(){
     if [[ -n $2 ]]; then
-        COLLECTION=$2
+        DATABASE=$2
     else
-        COLLECTION=fastbi-migrated
+        DATABASE=fastbi-migrated
     fi
 }
 
 startMongo(){
     if [[ $1 == "local" ]]; then
-        $APP_PATH localhost/$COLLECTION
+        $APP_PATH localhost/$DATABASE
     elif [[ $1 == "dev" ]]; then
-        $APP_PATH busprod102.wl.cj.com:27003/$COLLECTION
-    else
-        $APP_PATH build107.wl.cj.com/$COLLECTION
+        $APP_PATH busprod102.wl.cj.com:27003/$DATABASE
+    elif [[ $1 == "old" ]]; then
+        $APP_PATH build107.wl.cj.com/$DATABASE
     fi
 }
 
