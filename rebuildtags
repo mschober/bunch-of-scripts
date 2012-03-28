@@ -3,7 +3,7 @@
 source $HOME/bin/ck.sh
 
 if [ $1 ]; then
-    gock $1
+    cd $1
 else
     gock personal
 fi;
