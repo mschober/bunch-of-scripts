@@ -1,9 +1,33 @@
 #!/bin/bash
 
-SCRIPTNAME=$1
 LOCATION=$HOME/bin/.tmp
+
+function getScriptName(){
+#    if [[ -z $1 ]]; then
+#        echo need to enter script name, exiting
+#        exit
+#    else
+        SCRIPTNAME=$1
+#    fi
+}
+
+function getCommand(){
+#    if [[ -z $2 ]]; then
+#        echo missing script command string, exiting
+#        exit
+#    else
+        COMMAND=$2
+#    fi
+}
+
+#getScriptName
+#getCommand
+
+SCRIPTNAME=$1
+COMMAND=$2
+
 touch $LOCATION/$SCRIPTNAME
 echo '#!/bin/bash' > $LOCATION/$SCRIPTNAME
-echo "$2" >> $LOCATION/$SCRIPTNAME
+echo "$COMMAND" >> $LOCATION/$SCRIPTNAME
 chmod +x $LOCATION/$SCRIPTNAME
 ln -s $LOCATION/$SCRIPTNAME $HOME/bin/$SCRIPTNAME
