@@ -1,0 +1,11 @@
+#!/bin/bash
+
+FOUND=`queryProcessesFor $1`
+
+if [[ -z $FOUND ]];then
+    echo couldnt find process for $1
+else 
+    echo killing process for $1
+    kill -9 `echo $FOUND | cut -fw -d" "`
+fi
+

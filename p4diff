@@ -1,0 +1,3 @@
+#!/bin/bash
+
+p4 diff -dub | diff_painter.pl | less -R

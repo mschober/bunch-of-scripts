@@ -1,0 +1,2 @@
+#!/bin/bash
+formatCls.groovy `cat $HOME/.change_lists`

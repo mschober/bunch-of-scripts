@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ref='find . | grep -v "target"'
+if [[ -z $1 ]]; then
+    echo no args
+    exec $ref
+fi
+exec $ref | grep $@

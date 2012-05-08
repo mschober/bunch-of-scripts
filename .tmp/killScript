@@ -1,0 +1,4 @@
+#!/bin/bash
+echo deleting /home/mschober/bin/$1
+echo deleting /home/mschober/bin/.tmp/$1
+rm /home/mschober/bin/$1; rm /home/mschober/bin/.tmp/$1

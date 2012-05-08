@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "
+    def setManualBreakPoint() {
+        String cmd = \"xterm\"
+        Runtime run = Runtime.getRuntime()
+        Process pr = run.exec(cmd)
+        pr.waitFor()
+    }
+"

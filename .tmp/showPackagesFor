@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#PACKAGE=`sed -e "s/\./\//g" $1`
+PACKAGE=$1
+#echo $PACKAGE
+find `pwd` | grep -v "/target/" | grep -v "src/main" | grep -v "\.java" | grep -v "\.groovy" | grep $PACKAGE

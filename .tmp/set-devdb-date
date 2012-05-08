@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh-devdb "sudo date -s $1"
