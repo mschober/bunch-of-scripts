@@ -1,0 +1,4 @@
+#!/bin/bash
+
+tests=`ack -l $1 | grep Test | csv.pl`
+runDwTest $tests

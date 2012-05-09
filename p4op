@@ -2,8 +2,6 @@
 use strict;
 
 my $perforce_checkout = $ENV{CJP4WORKSPACE};
-warn("#Files opened for '$perforce_checkout':\n\n");
-
 my $str = `p4 opened`;
 for my $line (split(/\n/, $str)) {
     $line =~ s/\/\//$perforce_checkout\//;
