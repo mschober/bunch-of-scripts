@@ -1,2 +1,2 @@
 #!/bin/bash
-ssh-add; ssh -X oracle@localhost -p 2222
+ssh -X oracle@localhost -p 2222 $@

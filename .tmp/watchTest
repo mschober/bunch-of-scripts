@@ -1,0 +1,2 @@
+#!/bin/bash
+cd $HOME/work; tail -f cj_test.out

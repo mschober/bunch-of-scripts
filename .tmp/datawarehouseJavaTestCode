@@ -1,0 +1,2 @@
+#!/bin/bash
+findname | grep -ve '/test/resources/' | grep '\.' | grep 'src/test/' 
