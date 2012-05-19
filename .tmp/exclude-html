@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -ve '\.html'
+grep -ve '\.htm' | grep -ve '\.html'

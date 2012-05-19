@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -ve '\.sql'
+grep -ive '\.sql'
