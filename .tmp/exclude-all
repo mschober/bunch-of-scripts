@@ -1,0 +1,2 @@
+#!/bin/bash
+findname | exclude-java | exclude-groovy | exclude-xml | exclude-sql | exclude-packages | exclude-javascript | grep -ve /b2b/ | exclude-gif | exclude-txt | exclude-conf | exclude-properties | exclude-template | exclude-vm | exclude-scala | exclude-html |exclude-png | exclude-as
