@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "select column_name, data_type, data_precision, data_scale from user_tab_columns where table_name = UPPER('$1');" | sql_devdb

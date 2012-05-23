@@ -1,0 +1,2 @@
+#!/bin/bash
+findname | include-main | exclude-packages | count-lines

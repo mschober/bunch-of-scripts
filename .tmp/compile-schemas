@@ -1,0 +1,3 @@
+#!/bin/bash
+source $GOCK_HOME
+gock schemas; mvn test

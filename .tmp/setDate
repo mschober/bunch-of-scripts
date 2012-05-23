@@ -1,0 +1,2 @@
+#!/bin/bash
+shell-devdb "sudo date -s '`date`'"

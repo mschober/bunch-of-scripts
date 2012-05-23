@@ -1,6 +1,5 @@
 #!/bin/bash
-
-source $HOME/bin/ck.sh
+source $GOCK_HOME
 
 if [ $1 ]; then
     cd $1
