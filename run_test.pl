@@ -8,7 +8,7 @@ use File::Basename qw/
 /;
 
 my $dryrun = 0;
-my $quiet  = 1;
+my $quiet  = 0;
 
 sub run_test {
     my $filename = shift;
@@ -76,9 +76,11 @@ sub get_class {
         or die "Can't determine package";
 
     $package =~ s/;//;
+    $package =~ s/\s+$//;
 
     my ($class) = $contents =~ /public class (\w+) /
         or die "Can't determine class name";
+	$class =~ s/\s+$//;
     return "$package.$class";
 }
 
