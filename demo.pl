@@ -43,10 +43,11 @@ sub main {
             write_csv_hashes($output_filename, $results);
 
             $seconds = time() - $seconds;
-            print "complete. [$seconds seconds]\n"
+            print "complete. [$seconds seconds]\n";
         } catch {
             $seconds = time() - $seconds;
             print "failed. [$seconds seconds]\n";
+            print "$! \n";
         }
     }
 }
