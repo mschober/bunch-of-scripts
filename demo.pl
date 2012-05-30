@@ -29,11 +29,10 @@ HERE
 sub main {
     my $db_info = get_db_info($devdb ? "devdb" : "tcjopr5");
     my $dbh     = get_dbh($db_info);
+    local $|=1; # turn on autoflush
 
     for my $filename (@ARGV) {
-        my $seconds = time();
-        local $|=1; # turn on autoflush
-        print "$filename starting...";
+        my $seconds = display_start($filename);
 
         try {
             my $output_filename = get_output_filename($filename);
@@ -50,6 +49,14 @@ sub main {
             print "failed. [$seconds seconds]\n";
         }
     }
+}
+
+sub display_start{
+    my $filename = shift;
+    my $seconds = time();
+
+    print "$filename starting...";
+    return $seconds;
 }
 
 sub get_output_filename {
