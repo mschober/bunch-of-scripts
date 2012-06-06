@@ -35,6 +35,14 @@ sub main {
         my $seconds = display_start($filename);
 
         try {
+            my $sql = read_file($filename);
+        } catch {
+            print "$! \n";
+        };
+
+
+
+        try {
             my $output_filename = get_output_filename($filename);
             my $sql             = read_file($filename);
             $sql                = format_sql($sql);
@@ -48,7 +56,7 @@ sub main {
             $seconds = time() - $seconds;
             print "failed. [$seconds seconds]\n";
             print "$! \n";
-        }
+        };
     }
 }
 

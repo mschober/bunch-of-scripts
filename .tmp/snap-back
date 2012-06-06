@@ -1,0 +1,2 @@
+#!/bin/bash
+VBoxManage snapshot devdb_1.0.5 restore 'initdb-all'
