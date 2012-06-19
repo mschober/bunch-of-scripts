@@ -1,0 +1,16 @@
+#!/bin/bash
+
+snap-back
+wait $!
+dbstart
+countOutLoud 7
+setDate
+wait $!
+countOutLoud 3
+wait $!
+compile-schemas
+if [[ $? != 0 ]]; then
+    echo compile schemas failed
+    exit 1    
+fi
+roll-partitions

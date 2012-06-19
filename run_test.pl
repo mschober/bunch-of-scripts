@@ -78,7 +78,7 @@ sub get_class {
     $package =~ s/;//;
     $package =~ s/\s+$//;
 
-    my ($class) = $contents =~ /public class (\w+) /
+    my ($class) = $contents =~ /class (\w+) /
         or die "Can't determine class name";
 	$class =~ s/\s+$//;
     return "$package.$class";

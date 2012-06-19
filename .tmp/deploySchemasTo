@@ -1,0 +1,17 @@
+#!/bin/bash
+
+JAR_NAME="schemas-main-SNAPSHOT.one-jar.jar"
+ENV=$1
+JAR_PATH=$CURRENT_SCHEMA/$ENV-$JAR_NAME
+
+source $GOCK_HOME
+gock schemas
+mvn package -Dmaven.test.skip=true
+wait $!
+
+cp ./target/$JAR_NAME $JAR_PATH
+wait $!
+
+gock home
+java -jar $JAR_PATH locator="$1"
+

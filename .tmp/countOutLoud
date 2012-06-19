@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for (( t=1; t<=$1; t++  ))
+do
+    sleep 1
+    echo "$t s"
+done
+
