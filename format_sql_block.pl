@@ -2,53 +2,71 @@
 use strict;
 
 my @upper_words = qw/
-    select
-    into
-    from
-    where
-    and
-    or
-    if
-    then
-    insert
-    into
-    values
-    null
-    commit
-    rollback
-    number
-    varchar2
-    noparallel
-    not
-    in
-    out
-    as
-    fetch
-    cursor
+	alter
+	case
+	create
+	drop
+	exists
+	index
+	initial
+	loggging
+	nologging
+	on
+	parallel
+	return
     %notfound
-    loop
+    all
+    and
+    as
+    asc
     begin
-    end
+    between
+    commit
+    cursor
+    date
+    declare
+    desc
+    distinct
     else
     elsif
-    sysdate
-    date
-    timestamp
-    number
-    varchar2
-    declare
-    if
-    distinct
-    between
-    update
-    set
-    asc
-    desc
-    package
-    procedure
+    end
+    fetch
+    from
     function
+    if
+    if
+    in
+    insert
+    into
+    into
     is
-	return
+    loop
+    next
+    noparallel
+    not
+    null
+    number
+    number
+    or
+    out
+    package
+    pctincrease
+    procedure
+    rollback
+    select
+    set
+    storage
+    sysdate
+    table
+    tablespace
+    then
+    timestamp
+    union
+    update
+    values
+    varchar2
+    varchar2
+    where
 /;
 
 push(@upper_words,

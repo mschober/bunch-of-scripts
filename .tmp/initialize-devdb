@@ -1,6 +1,6 @@
 #!/bin/bash
 
-snap-back
+snap-back initdb-all
 wait $!
 dbstart
 countOutLoud 7
@@ -8,7 +8,7 @@ setDate
 wait $!
 countOutLoud 3
 wait $!
-compile-schemas
+compile-schemas $1
 if [[ $? != 0 ]]; then
     echo compile schemas failed
     exit 1    

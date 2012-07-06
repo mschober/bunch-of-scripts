@@ -1,0 +1,2 @@
+#!/bin/bash
+rlwrap sqlplus cj/qa%555@tpc2
