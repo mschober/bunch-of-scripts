@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Ticket Number"
+read ticketNumber
+echo "Description"
+read description
+
+fileName=$STICKIES/$ticketNumber
+
+echo
+echo "<a href=\"https://bugzilla.vclk.net/show_bug.cgi?id=$ticketNumber\">$ticketNumber</a><br>$description<hr>" | tee $fileName
+echo "<a href=\"http://cjpad.cj.com/qa-$ticketNumber\">QA STEPS</a><br>" | tee -a $fileName

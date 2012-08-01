@@ -1,2 +1,2 @@
 #!/bin/bash
-VBoxManage snapshot devdb_1.0.5 restore `cat $HOME/current-snap.vbox`
+VBoxManage snapshot Oracle11g32 restore `cat $HOME/current-snap.vbox`

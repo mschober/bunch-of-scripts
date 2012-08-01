@@ -3,6 +3,6 @@
 source $GOCK_HOME
 gock personal
 
-VBoxManage snapshot devdb_1.0.5 take $1
+VBoxManage snapshot Oracle11g32 take $1
 echo $1 > /home/mschober/current-snap.vbox
 

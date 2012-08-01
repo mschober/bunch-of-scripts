@@ -1,0 +1,2 @@
+#!/bin/bash
+sproutcore server --allow-from-ips='*.*.*.*'
