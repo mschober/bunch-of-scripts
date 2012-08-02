@@ -1,0 +1,19 @@
+#!/bin/bash
+
+files=`find . -maxdepth 1 -name "*.txt"`
+
+function findDays() {
+  for f in $files
+  do
+    today=`today`
+    fileDay=`basename $f | cut -d '-' -f1`
+    if [[ $today != $fileDay ]]; then
+      mv $f archives
+      #echo "today is $today and the day of the file is $fileDay"
+    else
+      echo "not archiving ($f)"
+    fi
+  done
+}
+
+findDays
