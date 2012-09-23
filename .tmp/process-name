@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "
+select
+    distinct process_name
+from dw_ref_dates
+where process_name like '%$1%'
+;
+" | tcjodw5
+
+

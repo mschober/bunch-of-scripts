@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+echo "select dw_logging.get_log_refdate('`upper $1`') from dual;" | tcjodw5 

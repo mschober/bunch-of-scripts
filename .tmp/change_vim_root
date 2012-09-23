@@ -1,0 +1,13 @@
+#!/bin/bash
+PROJECT_ROOT=$(dirname `find_up pom.xml`)
+echo "Project root: $PROJECT_ROOT"
+CURRENT_FILE=$1
+echo "Current file: $CURRENT_FILE"
+FULL_PATH_TO_FILE=$(findname $CURRENT_FILE)
+echo "Full path to file: $FULL_PATH_TO_FILE"
+source $HOME/.bashrc_additions
+set_tag
+echo "Git personal: $GIT_PERSONAL"
+cd $PROJECT_ROOT
+echo "Current directory: `pwd`"
+#vim $1
