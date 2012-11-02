@@ -1,10 +1,11 @@
 #!/bin/bash
 
 echo "
-    def setManualBreakPoint() {
-        String cmd = \"xterm\"
-        Runtime run = Runtime.getRuntime()
-        Process pr = run.exec(cmd)
-        pr.waitFor()
-    }
+    def setManualBreakPoint = {                  // <-- setting manual breakpoint here
+        Runtime run = Runtime.getRuntime()       // <--
+        Process pr = run.exec(\"xterm\")           // <--
+        pr.waitFor()                             // <--
+    }                                            // <-- setting manual breakpoint here
+
+    setManualBreakPoint()                        // <-- setting manual breakpoint here
 "
