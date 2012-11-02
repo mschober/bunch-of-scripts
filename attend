@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [[ -z $* ]] ;then
+    screen -r
+fi
+screen -x mschober/"dev$1"
