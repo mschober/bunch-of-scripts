@@ -1,0 +1,2 @@
+#!/bin/bash
+rlwrap sqlplus cjodw/qa\#555@tcjodw4 $@

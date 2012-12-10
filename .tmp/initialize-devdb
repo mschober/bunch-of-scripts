@@ -1,13 +1,20 @@
 #!/bin/bash
 
-snap-back initdb-all
+secondsToWait=$1
+
+#snap-back initdb-all
+snap-back nopasswd
 wait $!
+echo starting devdb
 dbstart
-countOutLoud 7
+countOutLoud ${secondsToWait:-7}
+echo setting devdb date to local box date
 setDate
 wait $!
 countOutLoud 3
 wait $!
+echo changing dir to home directory
+cd $HOME
 compile-schemas $1
 if [[ $? != 0 ]]; then
     echo compile schemas failed
