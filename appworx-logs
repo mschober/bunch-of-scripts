@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scp mschober@appworx101.la1.cj.com:/home/appworx/out/* ~/cj/appworx/logs
+scp mschober@appworx101.la1.cj.com:/home/mschober/cj/appworx/logs/* ~/cj/appworx/logs
