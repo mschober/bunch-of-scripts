@@ -1,0 +1,73 @@
+set wildchar=<Tab> wildmenu wildmode=full
+set autoindent
+set hidden
+set ruler
+set expandtab
+set tabstop=4
+set mouse=a
+set shiftwidth=4
+set softtabstop=4
+set hlsearch
+set incsearch
+set backspace=2
+set showmatch
+set laststatus=2
+"set statusline=[%n]\ %F\ %\( %M%R%H\) \@(%l\,%c%V)\ %P
+set tag=$GIT_PERSONAL/.tags
+set complete=.,w,b,u,k
+set ignorecase
+set pastetoggle=<F12>
+set nocompatible
+"(vi) read/write a .viminfo file, don't store more than 50 lines of registers
+set viminfo='20,\"50,%
+"(hi) keep 50 lines of command line history
+set history=50
+
+
+
+filetype plugin indent on
+
+autocmd BufEnter * :syntax sync fromstart
+autocmd BufEnter * lcd %:p:h
+augroup filetypedetect
+  au BufNewFile,BufRead *.pig set filetype=pig syntax=pig
+  au BufNewFile,BufRead *.hql set filetype=sql
+augroup END
+
+" http://www.vim.org/scripts/script.php?script_id=1697
+"map ,ac :Align ,<CR>gv:s/\( \+\),/,\1/g<CR>,wt<CR>
+"
+"vim mappings
+map ,rl :e %<CR>
+map ,ll o <ESC>
+map ,LL O <ESC>
+map ,uc :s;^//;;<CR>
+map ,lc :s;^;//;<CR>
+map ,am :Align : { },<CR>
+map ,a= :Align! =W [:><=~+-]\+<CR>
+map ,wt :perldo s/\s+$//g<CR>:perldo s/\t/    /g<CR>
+map ,c  "+y
+
+"bin mappings
+map ,at  :!tableize.pl<CR>
+map ,fs :!format_sql_block.pl<CR>
+map ,rs :!sql_compile.pl<CR>
+map ,rt  :w<CR>:!run_test.pl %<CR><CR>
+map ,ct  :!compile_test.pl %<CR><CR>
+map ,kt  :!killTest<CR><CR>:!compile_test.pl %<CR><CR>
+map ,gb :!go_base.pl %<CR><CR>
+map ,pd :!p4 diff -dub % \| diff_painter.pl \| less -R<CR>
+
+"external mappings
+map ,co :!git checkout %
+map ,pa :!p4 add %<CR>
+map ,pe :!p4 edit %<CR>
+map ,sn :set number!<CR>
+map ,bp :r!manualBreakpoint<CR>
+map ,gd :!git diff %<CR>
+
+vnoremap _( <ESC>`>a)<ESC>`<i(<ESC>
+vnoremap _" <ESC>`>a"<ESC>`<i"<ESC>
+vnoremap _' <ESC>`>a'<ESC>`<i'<ESC>
+vnoremap _{ <ESC>`>a}<ESC>`<i{<ESC>
+vnoremap _[ <ESC>`>a]<ESC>`<i[<ESC>

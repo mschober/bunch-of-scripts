@@ -1,0 +1,72 @@
+#== Start BashRC Functions ==#
+USER=`whoami`
+clearPath(){
+    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games
+}
+
+fullPath(){
+    clearPath
+    source $HOME/.setupPath.sh
+    export PATH
+}
+
+exportDevDBEnv(){
+    export DEVDB_HOST=devdb.db.cj.com
+    export DEVDB_PORT=1521
+    export DEVDB_SID=devdb
+}
+
+exportPerforceEnv(){
+    export P4ROOT=/home/$USER/cj/perforce
+    export P4PORT=p4cj.vclk.net:1666
+    export P4CLIENT=mike
+    export P4USER=$USER
+}
+
+exportPerforceMappings(){
+    export PERSONAL_BRANCH=//cj/personal/$USER/main
+    export PERSONAL=$HOME/cj/perforce/personal/$USER/main
+    export PERSONAL_GIT=$HOME/cj/git-area/personal/$USER/main
+}
+
+sourceScripts(){
+    source $HOME/bin/ck.sh
+    source $HOME/bin/go-package
+}
+
+function _gitp4 () {
+   local cur opts
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   opts="clone rollback debug commit rebase branches sync submit"
+
+   COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+}
+
+function become-rob() {
+    export GIT_PERSONAL=$HOME/cj/perforce/personal/rduffy/mainv2.0
+    echo "setting GIT_PERSONAL to ($GIT_PERSONAL)"
+}
+ 
+function become-mike() {
+    source $HOME/.profile_additions
+    echo "setting GIT_PERSONAL to ($GIT_PERSONAL)"
+}
+
+function set_tag() {
+    export GIT_PERSONAL=$(dirname `find_up pom.xml`)
+    echo "setting GIT_PERSONAL to ($GIT_PERSONAL)"
+}
+
+
+#== Start BashRC Changs ==#
+sourceScripts
+exportDevDBEnv
+exportPerforceEnv
+exportPerforceMappings
+
+fullPath
+
+_gitp4
+complete -o nospace -F _gitp4 git-p4
+complete -o nospace -F _gitp4 gp
+

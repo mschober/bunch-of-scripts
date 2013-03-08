@@ -1,0 +1,46 @@
+/usr/sbin/lightdm-session: 24: /home/mschober/.profile: source: not found
+Backend     : gconf
+Integration : true
+Profile     : unity
+Adding plugins
+Initializing core options...done
+Initializing composite options...done
+Initializing opengl options...done
+Initializing decor options...done
+Initializing vpswitch options...done
+Initializing snap options...done
+Initializing mousepoll options...done
+Initializing resize options...done
+Initializing place options...done
+Initializing move options...done
+Initializing wall options...done
+Initializing grid options...done
+I/O warning : failed to load external entity "/home/mschober/.compiz/session/10b93dc1d13d8cb82c136278061683957000000019320035"
+Initializing session options...done
+Initializing gnomecompat options...done
+Initializing animation options...done
+Initializing fade options...done
+Initializing unitymtgrabhandles options...done
+Initializing workarounds options...done
+Initializing scale options...done
+** Message: applet now removed from the notification area
+compiz (expo) - Warn: failed to bind image to texture
+Initializing expo options...done
+Initializing ezoom options...done
+** Message: using fallback from indicator to GtkStatusIcon
+
+(compiz:2000): GConf-CRITICAL **: gconf_client_add_dir: assertion `gconf_valid_key (dirname, NULL)' failed
+Initializing unityshell options...done
+** Message: applet now embedded in the notification area
+
+(bluetooth-applet:2028): Gdk-CRITICAL **: gdk_window_thaw_toplevel_updates_libgtk_only: assertion `window->update_and_descendants_freeze_count > 0' failed
+Setting Update "main_menu_key"
+Setting Update "run_key"
+** Message: moving back from GtkStatusIcon to indicator
+** Message: applet now removed from the notification area
+ERROR: Module nvidia does not exist in /proc/modules
+
+** (gnome-screensaver:2342): WARNING **: screensaver already running in this session
+
+(gnome-settings-daemon:1983): GLib-CRITICAL **: g_variant_get_int32: assertion `g_variant_is_of_type (value, G_VARIANT_TYPE_INT32)' failed
+WARNING:root:timeout reached, exiting
