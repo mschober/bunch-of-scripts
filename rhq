@@ -17,14 +17,14 @@ SCRIPT_TEMPLATE=$HOME/.script-template.hql
 LOG_DIR=$PWD/logs
 OUTPUT_DIR=$PWD/out
 
-SERVER=current-server
+SERVER=$(current-server)
 
 allow-ssh
 
 if [[ -s $SCRIPT ]]; then
     if [[ -s $SCRIPT_TEMPLATE ]]; then
         echo "Copying script template to remote server: $SERVER"
-        scp $SCRIPT_TEMPLATE $SERVER
+        scp $SCRIPT_TEMPLATE $SERVER:
 
         echo "Copying script to remote server: $SERVER:$PWD"
         rrc $SCRIPT 

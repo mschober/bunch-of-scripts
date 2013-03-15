@@ -3,15 +3,10 @@
 #MIRROR_PATH=${PWD#$HOME}
 #echo $MIRROR_PATH
 
-SERVER=$(cat $HOME/.current_server)
-rr "mkdir -p $PWD"
+source $FUNCTIONS/current-server.func
 
-while getopts "p:" opt; do
-    case $opt in 
-        p)
-            scp $2 $SERVER:
-esac
-done
+SERVER=$(current-server)
+rr "mkdir -p $PWD"
 
 scp $@ $SERVER:$PWD
 
