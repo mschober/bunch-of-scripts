@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#MIRROR_PATH=${PWD#$HOME}
+#echo $MIRROR_PATH
+
+SERVER=$(cat $HOME/.current_server)
+rr "mkdir -p $PWD"
+
+while getopts "p:" opt; do
+    case $opt in 
+        p)
+            scp $2 $SERVER:
+esac
+done
+
+scp $@ $SERVER:$PWD
+

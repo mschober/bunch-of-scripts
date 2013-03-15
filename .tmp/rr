@@ -1,20 +1,38 @@
 #!/bin/bash
 
+source $FUNCTIONS/allow-ssh.func
+
+
 CURRENT_CONNECTION=$HOME/.current_server
 [[ ! -s $CURRENT_CONNECTION ]] && echo "chsxedwhdc002.idx.expedmz.com" > $CURRENT_CONNECTION
 
 function set_connection {
     CONNECTION=$(cat $CURRENT_CONNECTION)
-    echo $CONNECTION
 }
 
 [[ $# == 2 ]] && echo $1 > $CURRENT_CONNECTION
 set_connection
 
-if [[ ! $(ssh-add -l) =~ $(whoami) ]]; then
-    ssh-add $HOME/.ssh/id_rsa
+allow-ssh
+
+#while getopts "s" opt; do
+#
+#    case $opt in 
+#        s)
+#            echo $CONNECTION
+#            ;;
+#        \?)
+#           echo "Invalid option: -$OPTARG" >&2
+#           ;;
+#        :)
+#           ;;
+#    esac
+#done
+LOCATION=${PWD}
+
+
+if [[ $# == 0 ]]; then #just connect
+    ssh $CONNECTION
+else #pass commands
+    ssh -t $CONNECTION "cd $LOCATION; $@"
 fi
-
-ssh $CONNECTION $@
-
-

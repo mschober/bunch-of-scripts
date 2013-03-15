@@ -1,0 +1,43 @@
+#!/bin/bash
+##
+#-----[host]$./run my-example-hive-script.hql
+##
+#The hive line redirects STDOUT to an outfile 
+#and STERR to an outfile while still printing everything to the console
+#this is handy for grepping the files later
+set -o errexit
+set -o nounset
+set -o pipefail
+
+source $FUNCTIONS/allow-ssh.func
+source $FUNCTIONS/current_server.func
+
+SCRIPT=$1
+SCRIPT_TEMPLATE=$HOME/.script-template.hql
+LOG_DIR=$PWD/logs
+OUTPUT_DIR=$PWD/out
+
+SERVER=current_server
+
+allow-ssh
+
+if [[ -s $SCRIPT ]]; then
+    if [[ -s $SCRIPT_TEMPLATE ]]; then
+        echo "Copying script template to remote server: $SERVER"
+        scp $SCRIPT_TEMPLATE $SERVER
+
+        echo "Copying script to remote server: $SERVER:$PWD"
+        rrc $SCRIPT 
+
+        echo "adding script header from $SCRIPT_TEMPLATE"
+        rr "cat $SCRIPT_TEMPLATE > H-$SCRIPT"
+        rr "cat $SCRIPT >> H-$SCRIPT"
+        SCRIPT=H-$SCRIPT
+    else
+        echo "no script template: $SCRIPT_TEMPLATE"
+    fi
+    echo "executing $SCRIPT"
+    rr "hive -f $SCRIPT" > >(tee $OUTPUT_DIR/$SCRIPT.out) 2> >(tee $LOG_DIR/$SCRIPT.log >&2)
+else
+    echo "no such script: $SCRIPT"
+fi

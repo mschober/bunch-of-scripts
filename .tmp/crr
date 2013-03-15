@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source $FUNCTIONS/allow-ssh.func
+source $FUNCTIONS/current-server.func
+
+#MIRROR_PATH=${PWD#$HOME}
+#echo $MIRROR_PATH
+
+allow-ssh
+SERVER=$(current-server)
+
+scp $SERVER:$PWD/$1 .
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+[[ $# != 1 ]] && echo "only accepts 1 parameter" && exit 1
+
+QUERY_STRING=$1
+QUERY_STRING=$(echo $QUERY_STRING | sed "s/^'//")
+QUERY_STRING=$(echo $QUERY_STRING | sed "s/'$//")
+
+echo $QUERY_STRING
+
+echo $2
+echo $3
