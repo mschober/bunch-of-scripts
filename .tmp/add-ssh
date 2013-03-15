@@ -1,0 +1,6 @@
+#!/bin/bash
+
+scp ~/.ssh/id_rsa.pub chsxedwhdc002.idx.expedmz.com:
+rr 'cat id_rsa.pub >> .ssh/authorized_keys'
+rr 'rm id_rsa.pub'
+

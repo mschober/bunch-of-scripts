@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CURRENT_CONNECTION=$HOME/.current_server
+[[ ! -s $CURRENT_CONNECTION ]] && echo "chsxedwhdc002.idx.expedmz.com" > $CURRENT_CONNECTION
+
+function set_connection {
+    CONNECTION=$(cat $CURRENT_CONNECTION)
+    echo $CONNECTION
+}
+
+[[ $# == 2 ]] && echo $1 > $CURRENT_CONNECTION
+set_connection
+
+if [[ ! $(ssh-add -l) =~ $(whoami) ]]; then
+    ssh-add $HOME/.ssh/id_rsa
+fi
+
+ssh $CONNECTION $@
+
+
