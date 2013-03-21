@@ -7,6 +7,8 @@ createSetupPathScript() {
     SETUP_PATH=$HOME/.setupPath.sh
     rm $SETUP_PATH
     overwriteScriptWithNewExports
+    clearPath
+    fullPath
 }
 
 overwriteScriptWithNewExports(){
@@ -29,70 +31,84 @@ appendRun() {
 }
 
 globalEnvVariables(){
-    appendRun 'export DEVDB_HOST=devdb.db.cj.com'
-    appendRun 'export DEVDB_PORT=1521'
-    appendRun 'export DEVDB_SID=devdb'
-    appendRun 'export BUILD_USER=spud'
+    appendRun 'export JAVA_HOME=$APPS_HOME/jdk'
     appendRun 'export APPS_HOME=/home/mschober/apps'
-    appendRun 'export ARDUINO_HOME=$APPS_HOME/arduino'
-    appendRun 'export TITANIUM_HOME=$APPS_HOME/titanium'
-    appendRun 'export HADOOP_HOME=$APPS_HOME/hadoop'
-    appendRun 'export PLAY_HOME=$APPS_HOME/play'
-    appendRun 'export SCALA_HOME=$APPS_HOME/scala'
-    appendRun 'export PIG_HOME=$APPS_HOME/pig'
-    appendRun 'export IDEA_HOME=$APPS_HOME/idea'
-    appendRun 'export SQLDEVELOPER=$APPS_HOME/sqldeveloper/sqldeveloper'
-    appendRun 'export HBASE_HOME=$APPS_HOME/hbase'
-    appendRun 'export ZOOKEEPER_HOME=$HBASE_HOME'
-    appendRun 'export SQOOP_HOME=$APPS_HOME/sqoop'
-    appendRun 'export MONGO=$APPS_HOME/mongo'
-    appendRun 'export MAVEN_HOME=$APPS_HOME/maven'
     appendRun 'export LC_COLLATE=POSIX'
-    appendRun 'export CJP4WORKSPACE=$HOME/cj/perforce'
-    appendRun 'export GIT_PERSONAL=$HOME/cj/personal/mschober/main' 
     appendRun 'export GOCK_HOME=$HOME/bin/ck.sh' 
-    appendRun 'export MVN_RESULTS=$HOME/cj/mvn-results'
-    appendRun 'export STICKIES=$HOME/cj/stickies'
-    appendRun 'export CURRENT_SCHEMA=$HOME/current-schema'
-    appendRun 'export GRADLE_HOME=$APPS_HOME/gradle'
-    appendRun 'export EVERPAD_HOME=$APPS_HOME/everpad'
-    appendRun 'export ELASTIC_SEARCH_HOME=$APPS_HOME/elasticsearch'
-    #appendRun 'export JAVA_HOME=$APPS_HOME/java'
+    appendRun 'export FUNCTIONS=$HOME/functions'
+    appendRun 'export SPROCS=/cygdrive/c/sprocs/'
+    appendRun 'export MAVEN_HOME=$APPS_HOME/maven'
+    #appendRun 'export GIT_PERSONAL=$HOME/cj/personal/mschober/main' 
+    #appendRun 'export CJP4WORKSPACE=$HOME/cj/perforce'
+    #appendRun 'export MVN_RESULTS=$HOME/cj/mvn-results'
+    #appendRun 'export STICKIES=$HOME/cj/stickies'
+    #appendRun 'export CURRENT_SCHEMA=$HOME/current-schema'
+    #appendRun 'export GRADLE_HOME=$APPS_HOME/gradle'
+    #appendRun 'export EVERPAD_HOME=$APPS_HOME/everpad'
+    #appendRun 'export ELASTIC_SEARCH_HOME=$APPS_HOME/elasticsearch'
+    #appendRun 'export ARDUINO_HOME=$APPS_HOME/arduino'
+    #appendRun 'export TITANIUM_HOME=$APPS_HOME/titanium'
+    #appendRun 'export HADOOP_HOME=$APPS_HOME/hadoop'
+    #appendRun 'export PLAY_HOME=$APPS_HOME/play'
+    #appendRun 'export SCALA_HOME=$APPS_HOME/scala'
+    #appendRun 'export PIG_HOME=$APPS_HOME/pig'
+    #appendRun 'export IDEA_HOME=$APPS_HOME/idea'
+    #appendRun 'export SQLDEVELOPER=$APPS_HOME/sqldeveloper/sqldeveloper'
+    #appendRun 'export HBASE_HOME=$APPS_HOME/hbase'
+    #appendRun 'export ZOOKEEPER_HOME=$HBASE_HOME'
+    #appendRun 'export SQOOP_HOME=$APPS_HOME/sqoop'
+    #appendRun 'export MONGO=$APPS_HOME/mongo'
+    #appendRun 'export DEVDB_HOST=devdb.db.cj.com'
+    #appendRun 'export DEVDB_PORT=1521'
+    #appendRun 'export DEVDB_SID=devdb'
+    #appendRun 'export BUILD_USER=spud'
     #appendEchoExport "export SQLDEVELOPER=$APPS_HOME/sqldeveloper"
     #appendEchoExport "export ECLIPSE=$APPS_HOME/eclipse"
     #appendEchoExport "export P4V_HOME=$APPS_HOME/p4v"
 }
 
 pathExports(){
-    appendToSetup 'PATH=$HOME/sqllib/bin:$PATH'
-    appendToSetup 'PATH=$SOFTWARE_FOLDER/bin:$PATH'
-    appendToSetup 'PATH=$APPS_HOME/projector/bin:$PATH'
-    appendToSetup 'PATH=$SOFTWARE_FOLDER/shared-scripts/bin:$PATH'
-    appendToSetup 'PATH=$APPS_HOME/bin:$PATH'
-    appendToSetup 'PATH=$HADOOP_HOME/bin:$PATH'
-    appendToSetup 'PATH=$PIG_HOME/bin:$PATH'
-    appendToSetup 'PATH=$IDEA_HOME/bin:$PATH'
-    appendToSetup 'PATH=$HBASE_HOME/bin:$PATH'
-    appendToSetup 'PATH=$SQOOP_HOME/bin:$PATH'
-    appendToSetup 'PATH=$ARDUINO_HOME:$PATH'
-    appendToSetup 'PATH=$SCALA_HOME/bin:$PATH'
-    appendToSetup 'PATH=$PLAY_HOME:$PATH'
-    appendToSetup 'PATH=$TITANIUM_HOME:$PATH'
-    appendToSetup 'PATH=$SOFTWARE_FOLDER/cdh/cdh3u2/bin:$PATH'
-    appendToSetup 'PATH=$HOME/bin:$PATH'
-    appendToSetup 'PATH=$HOME/bin/filters:$PATH'
-    appendToSetup 'PATH=$GRADLE_HOME/bin:$PATH'
-    appendToSetup 'PATH=$EVERPAD_HOME/bin:$PATH'
-    appendToSetup 'PATH=$ELASTIC_SEARCH_HOME/bin:$PATH'
-    #appendToSetup PATH=$JAVA_HOME/bin:$PATH
+    appendToSetup 'PATH=$PATH:$JAVA_HOME/bin'
+    appendToSetup 'PATH=$PATH:$APPS_HOME/bin'
+    appendToSetup 'PATH=$PATH:$HOME/bin'
+    appendToSetup 'PATH=$PATH:$HOME/bin/filters'
+    appendToSetup 'PATH=$PATH:$MAVEN_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$HOME/sqllib/bin'
+    #appendToSetup 'PATH=$PATH:$SOFTWARE_FOLDER/bin'
+    #appendToSetup 'PATH=$PATH:$APPS_HOME/projector/bin'
+    #appendToSetup 'PATH=$PATH:$SOFTWARE_FOLDER/shared-scripts/bin'
+    #appendToSetup 'PATH=$PATH:$HADOOP_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$PIG_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$IDEA_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$HBASE_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$SQOOP_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$ARDUINO_HOME'
+    #appendToSetup 'PATH=$PATH:$SCALA_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$PLAY_HOME'
+    #appendToSetup 'PATH=$PATH:$TITANIUM_HOME'
+    #appendToSetup 'PATH=$PATH:$SOFTWARE_FOLDER/cdh/cdh3u2/bin'
+    #appendToSetup 'PATH=$PATH:$GRADLE_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$EVERPAD_HOME/bin'
+    #appendToSetup 'PATH=$PATH:$ELASTIC_SEARCH_HOME/bin'
     #appendToSetup PATH=$P4V_HOME/bin:$PATH
     #appendToSetup PATH=$SQLDEVELOPER:$PATH
-    #appendToSetup PATH=$MAVEN_HOME/bin:$PATH
     #appendToSetup PATH=$ECLIPSE:$PATH
+}
+
+clearPath(){
+    echo "resetting path based on file: $HOME/.initial_path"
+    PATH=`cat $HOME/.initial_path`
+    echo $PATH
+    #PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games
+}
+
+fullPath(){
+    source $HOME/.setupPath.sh
+    echo "setting path based on file: $HOME/.setupPath.sh"
+    echo $PATH
+    export PATH
 }
 
 #== Start Profile Changes ==#
 createSetupPathScript
-
-source $HOME/.setupPath.sh
 includeRubyVersionManger

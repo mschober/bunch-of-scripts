@@ -1,580 +1,500 @@
-cat > env1
-cat > env2
-cat > prod1
-cat > prod2
+find . -iname -maxdepth 0 emea
+man find
+find -name -maxdepth 0 emea .
+find -name -maxdepth 0 . emea
+man find
+find . -iname -maxdepth 0 emea
+man find
+find . -maxdepth 0 -name emea
 ls
-mv env1 dev1
-mv env2 dev2
+find -maxdepth 0 -iname emea
+find . -iname emea -maxdepth 0
+find -maxdepth 0 -iname emea .
+find . -iname emea -maxdetph 0
+find . -iname emea -maxdepth 0
+find -maxdepth 0 . -iname emea
+find . -D tree
+find -D
+find -D tree
+find
+find --help
+find --maxdepth-0
+find --maxdepth=0
+find -maxdepth 0
+find -maxdepth 0 -iname emea
+find -maxdepth 1 -iname emea
 ls
-cat dev
-cat dev*(
-cat dev*
-mv dev2 dev3
-cat prod1
-ssh chsxedwhdc001.idx.expedmz.com
-cat prod2
-ssh chsxedwhdc002.idx.expedmz.com
-exit
-cat `which dev1`
-ssh chelhdcledw001.karmalab.net
-ssh chelhdcledw003.karmalab.net
-chelhdcledw001.karmalab.net
-chelhdpdev003.karmalab.net
-chsxedwhdc001.idx.expedmz.com
-chsxedwhdc002.idx.expedmz.com
-insert overwrite table stg.lz_eww_omniture_hit_srch 
-go db2-2-hadoop 
+find -maxdepth 1 -iname apac
+find -maxdepth 1 -iname apac
+find -maxdepth 1 -iname apac*
 ls
-cd initial-files-from-paresh/
+mv APAC_guids.csv apac/
 ls
-cat initial-select.hql 
+tree
 ls
-hive -f initial-select.hql 
-cat ~/expedia/prod2 
-ssh chsxedwhdc002.idx.expedmz.com 'hive -f initial-select.hql'
-scp initial-select.hql chsxedwhdc002.idx.expedmz.com
-scp initial-select.hql chsxedwhdc002.idx.expedmz.com:
-ssh chsxedwhdc002.idx.expedmz.com 'hive -f initial-select.hql'
-ssh chsxedwhdc002.idx.expedmz.com
-scp initial-select.hql chsxedwhdc002.idx.expedmz.com:
-ssh-keygen 
-scp /home/mschober/.ssh/id_rsa.pub chsxedwhdc002.idx.expedmz.com:
-scp initial-select.hql chsxedwhdc002.idx.expedmz.com:
-ssh chsxedwhdc002.idx.expedmz.com 'hive -f initial-select.hql'
-cat ~/expedia/dev*
-ping chelhdcledw001.karmalab.net
-ping chelhdpdev003.karmalab.net
-ssh chelhdcledw001.karmalab.net 'hive -f initial-select.hql'
-scp initial-select.hql chelhdcledw001.karmalab.net:
-scp /home/mschober/.ssh/id_rsa.pub chelhdcledw001.karmalab.net:
-ssh chelhdcledw001.karmalab.net
-scp initial-select.hql chelhdcledw001.karmalab.net:
-ssh chelhdcledw001.karmalab.net 'hive -f initial-select.hql'
-exit
-go db2-2-hadoop 
 ls
-cd initial-files-from-paresh/
+find twenty
+find . twenty
+man find
 ls
-vim hdp_lz_eww_omniture_impressions.hql 
-share
-exit
-dev1
-cd bin
+find the
+find . the
+grep -i -R twenty
+man grep
+find . -name the
+find . -name twenty
 ls
-cat dev1
-cp envs/dev1.sh envs/dev2.sh
-ln -s envs/dev2.sh dev2
-vim dev2 
-cd
-cd bin/
-ls
-dev2
-cd
-dev2
-cd env
-ls
-cd bin/
-mv dev1 prod1
-mv dev2 prod2
-cd envs/
-rename 's/dev/prod/g' *
-ls
-cd
-prod2
-cd bin/
-chmod +x prod2 
-ll
-ls
-ll prod*
-ls -la pro
-ls -la prod
-l prod
-ls
-rm prod
-rm prod*
-ln -s envs/prod1.sh prod1
-ls -s envs/prod2.sh prod2
-ls
-prod2
-ls prod*
-ln -s envs/prod2.sh prod2
-prod2 
-cd
-prod2
-exit
-go db2-2-hadoop 
-ls
-cd initial-files-from-paresh/
-ls
-rim sp_EWW_HOTEL_RECOMMENDATION_GENERAL.sql 
-cd
-vim .vimrc.before.orig 
-vim .vimrc.after 
-create table if not exists ewwdev.stg_lz_eww_omniture_impressions as
-drop table if exists ewwdev.stg_lz_eww_omniture_impressions;
-sudo apt-get install xchat
-xhc
-xchat 
-drop table if exists ewwdev.stg_lz_eww_omniture_impressions;
-sudo apt-get install chrome
-sudo apt-get install chromium-browser
-chromium-browser 
-ifconfig 
-wget http://www.vim.org/scripts/download_script.php?src_id=18148
-ls
-rm download_script.php\?src_id\=18148 
-vim Downloads/Align.vba.gz 
-ls
-go db2-2-hadoop 
-ls
-cd initial-files-from-paresh/
-ls
-..
-ls
-prod2
-scp my-scripts/hdp_lz_eww_omniture_impressions-modified.hql chsxedwhdc002.idx.expedmz.com:
-prod2
-exit
-ls
-cd bin
-ls
-ll
-ls
-ls --directories
+find . -name '*twenty*'
+ls '*twenty*'
+ls twenty*
+ls '.*twenty.*'
+ls ".*twenty.*"
 man ls
-ls -p
-ls --group-directories-first
-ls envs/
-ls dev1 
-mv envs/dev1.sh ..
-mv ../dev1.sh .
-rmdir envs/
-rm dev1
-cd
-dev1.sh 
-cd bin/
+ls --format=accross
+ls --format=across
 ls
-vim dev1.sh 
-chmod +x dev1.sh 
-vim dev
-vim dev1.sh 
-cat ~/expedia/envs 
-vim dev1.sh 
-dev1.sh 
-dev
-vim local_devdb 
-cat shell-devdb 
-vim dev1.sh 
-dev1.sh 
-vim dev1.sh 
-dev1.sh 
-man ssh
-vim dev1.sh 
-dev1.sh 
-cat dev1.sh 
-vim dev1.sh 
-dev1.sh 
-dev1.sh | xargs
-dev1
-dev1.sh 
-dev1.sh > xargs
-mkdir envs
-mv dev1.sh envs/
-ln -s envs/dev1.sh .
-vim dev1.sh 
-mv dev1.sh dev1
-cd
-dev1
-ssh `dev1`
-ssh chsxedwhdc001.idx.expedmz.com
-ssh chsxedwhdc001
-cat expedia/envs 
-ssh chsxedwhdc002.idx.expedmz.com
-ssh chelhdcledw001.karmalab.net
-ifconfig 
-ssh chelhdcledw001.karmalab.net
+ls emea/
+ls out/
+cp guids-APAC.hql guids-EMEA.hql
+vim guids-EMEA.hql 
+rhq guids-EMEA.hql 
 ls
-cd bin/
-ls
-vim envs/dev1.sh 
-dev
-dev1
-vim dev1 
-cat dev1 
-ssh -X chsxedwhdc001.idx.expedmz.com
-ssh chsxedwhdc001.idx.expedmz.com
-cat ~/expedia/envs 
-ssh chsxedwhdc001.idx.expedmz.com
-ssh chsxedwhdc002.idx.expedmz.com
-ls
-cd
-scp .ssh/id_rsa.pub chsxedwhdc002.idx.expedmz.com:
-ssh chsxedwhdc002.idx.expedmz.com
-ssh chsxedwhdc001.idx.expedmz.com
-ssh chsxedwhdc002.idx.expedmz.com
-go db2-2-hadoop 
-ls
-cd initial-files-from-paresh/
-ls
-mkdir ../my-scripts
-mv initial-select.hql ../my-scripts/
-ls
-cat chsxedwhdc002.idx.expedmz.com 
-ls
-rm chsxedwhdc002.idx.expedmz.com 
-ls
-vim hdp_lz_eww_omniture_impressions.hql 
-exit
 share
-exit
-echo $JAVA_HOME
-ls app
-ls apps
-vim .profile_additions 
-source .profile
-echo $JAVA_HOME
-source .bashrc
-echo $JAVA_HOME
-vim .profile_additions 
-vim .setupPath.sh 
-unset JAVA_HOME
-echo $JAVA_HOME
-source .bashrc && source .profile
-echo $JAVA_HOME
-exit
-echo $JAVA_HOME
-rm .setupPath.sh 
-exit
-ls
-. $HOME/sqllib/db2profile
-ls sqllib/
-ls -la sqllib/
-ls -larth
-head db2rtcl_nr.rsp 
-less db2rtcl_nr.rsp 
-which db2
-db2
-ls
-cd sqllib/
-ls
-ls bin/
 cd
-vim .profile_additions 
-pwd
-cd sqllib/
-cd bin/
-pwd
-cd
-source .profile
-db2
-ls
-ls DownloadDirector/rtcl/db2
-ls DownloadDirector/rtcl/db2/linux/
-ls DownloadDirector/rtcl/db2/linux/install/
-ls DownloadDirector/rtcl/db2/linux/install/  grep pam
-ls DownloadDirector/rtcl/db2/linux/install/ | grep pam
-whereis libpam.*
-whereis libbintcp.*
-cd DownloadDirector/
-ls
-cd rtcl/
-ls
-cd db2/
-ls
-cd linux/
-ls
-cd install/
-ls
-cd
-cd sqllib/
-ls
-cd insta
-ls
-cd install/
-ls
-..
-ls
-..
-cd sqllib/
-ls
-cat > post-install-steps.txt
-ls
-cat post-install-steps.txt 
-exit
-echo $JAVA_HOME
-cat .setupPath.sh
-source .profile
-ls .setupPath.sh 
-cat .setupPath.sh 
-grep JAVA_HOME .setupPath.sh 
-ack JAVA_HOME
-ls
-grep JAVA_HOME .bashrc .profile .bashrc_additions .profile_additions 
-ssh dle-db2edw01.dl.karmalab.net
-ssh mschober@dle-db2edw01.dl.karmalab.net
-cd Download
-cd DownloadDirector/
-ls
-tar xzf ibm_data_server_runtime_client_linuxia32_v10.1.tar.gz 
-ls
-tar xf ibm_data_server_runtime_client_linuxia32_v10.1.tar.gz 
-ls
-ll
-ls -la
-ls -larth
-ls
-tar xzf ibm_data_server_runtime_client_linuxia32_v10.1.tar.gz ds
-ls
-mkdir temp
-mv ibm_data_server_runtime_client_linuxia32_v10.1.tar.gz 
-mv ibm_data_server_runtime_client_linuxia32_v10.1.tar.gz  temp/
-cd temp/
-ls
-tar xzf ibm_data_server_runtime_client_linuxia32_v10.1.tar.gz 
-ls
-cd rtcl/
-ls
-ls db2
-ls
-ls db2/linux/
-ls db2/linux/biun
-ls db2/linux/bin
-db2
-whereis db2
-ls
-./db2setup 
-./db2prereqcheck 
-ls
-./db2_install 
-ls
-ls db2
-cd db2/
-ls
-ls linux/
-tree linux/
-ls
-cd linux/
-ls
-ls install/
-./install/db2setup
-exit
 share
+cd svn
+cd etl-unit-read-only/trunk/etlunit-informatica/
+ls
+which mvn
+which mvn
+ls
 exit
+cd svn/
 ls
-go db2-2-hadoop 
+cd etl-unit-read-only/
 ls
-cd initial-files-from-paresh/
+cd trunk/
 ls
-ssh cheledwhdc901
-ifconfig 
-ping cheledwhdc901
-exit
-go db2-2-hadoop 
+cd etlunit-informatica/
 ls
-cd my-scripts/
+vim pom.xml 
 ls
-vim uds_top_hotel_general_v1.hql 
-exit
-share
-exit
-p4v &
+cd src/
 ls
-go db2-2-hadoop 
+cd test/
 ls
-cd initial-files-from-paresh/
-ls
-ssh cheledwhdc901
-ping cheledwhdc901
-ping google.com
-ifconfig 
-cd
-ls
-ping chelhdpdev005
-cd expedia/
-ls
-cat envs 
-ping chelhdcledw001.karmalab.net
-ping cheledwhdc901.karmalab.net
-ssh cheledwhdc901.karmalab.net
-sudo vim /etc/hosts
-ping cheledwhdc901
-ssh cheledwhdc901
-sudo vim /etc/hosts
-vim envs 
-cat envs 
-ssh cheledwhdc901.karmalab.net
-scp ../.ssh/id_rsa.pub cheledwhdc901.karmalab.net:
-ssh cheledwhdc901.karmalab.net
-ls
-cat envs 
-ls
-ssh chelhdpdev003.karmalab.net
-ls
-go db2-2-hadoop 
-ls
-cd initial-files-from-paresh/
-l
-p4diff sp_EWW_HOTEL_RECOMMENDATION_GENERAL.sql sp_EWW_HOTEL_RECOMMENDATION_FAMILY.sql 
-share
-go db2-2-hadoop 
-ls
-cd initial-files-from-paresh/
-ls
-rim sp_EWW_HOTEL_RECOMMENDATION_GENERAL.sql 
-rim sp_EWW_HOTEL_RECOMMENDATION_FAMILY.sql 
-ls
-rim sp_EWW_HOTEL_RECOMMENDATION_BUSINESS.sql 
-ls
-vimdiff sp_EWW_HOTEL_RECOMMENDATION_BUSINESS.sql sp_EWW_HOTEL_RECOMMENDATION_GENERAL.sql 
-ssh mschober@chele
-ssh chelhdpdev003.karmalab.net
-go db2-2-hadoop 
-ls
-cd initial-files-from-paresh/
-p4merge sp_EWW_HOTEL_RECOMMENDATION_GENERAL.sql sp_EWW_HOTEL_RECOMMENDATION_FAMILY.sql 
+tree
+which mvn
+cd ..
 ls
 cd ..
 ls
-cd my-scripts/
-ls
-git status
-ls
-vim uds_top_hotel_general_v1.hql 
-ls
-envs
-cd
-cd expedia/
-ls
-newScript envs "cat ~/expedia/envs"
-env
-envs
-which envs
-cd
-cd bin/
-envs
-cat evns
-cat envs
-ls envs/
-rm -rf envs/
-ls
-cd
-ls
-killScript envs
-newScript envs "cat $HOME/expedia/envs"
-envs
-ls
-go db2-2-hadoop 
-ls
-cd my-scripts/
-ls
-vim uds_top_hotel_business_v1.hql 
-ls
-go db2-2-hadoop 
-ls
-ls my-scripts/
-cd my-scripts/
-scp uds_top_hotel_general_v1.hql cheledwhdc901.karmalab.net:
-vim uds_top_hotel_general_v1.hql 
-ls
-git init
-git add .
-git status
-git commit -m "initial commit"
-ls
-git status
-ls
-rm uds_top_hotel_business_v1.hql 
-cp uds_top_hotel_general_v1.hql uds_top_hotel_business_v1.hql
-ls
-rm uds_top_hotel_business_v1.hql 
-ls
-envs
-scp uds_top_hotel_business_v1.hql chelhdpdev003.karmalab.net:
-ls
-scp uds_top_hotel_business_v1.hql chelhdpdev003.karmalab.net:
-ls
-ack ewwdev uds_top_hotel_general_v1.hql 
-ack-grep ewwdev uds_top_hotel_business_v1.hql 
-grep -r ewwdev uds_top_hotel_business_v1.hql 
-alias grep
-ls
-sudo apt-get install gparted
-sudo apt-get update
-sudo apt-get update && sudo apt-get install gparted
-eti
+mvn clean install
+source ~/.profile_additions
+mvn clean install
+which maven
+which mvn
+echo $PATH | mvn
+echo $PATH | grep mvn
+echo $PATH
+echo $PATH | grep apps
+cat ~/.setupPath.sh 
+export PATH=$PATH:$MAVEN_HOME/bin
+which mvn
+mvn clean install
 exit
-hare
-share
-exti
-exit
-df -h
-mount -l
-cd /media/dopey/e6410/
 ls
-cd home/mschober/
+mkdir svn
+cd svn/
 ls
-ll
-ls -la
-ls -la .*
-ls -la .* | less
-ls -la .*.rc
-ls -la *rc
-ls -la .*rc
-cat .bashrc
+svn checkout http://etl-unit.googlecode.com/svn/ etl-unit-read-only
+ulimit -n
+svn checkout http://etl-unit.googlecode.com/svn/ etl-unit-read-only
+svn help cleanup
+svn cleanup
 ls
-mount -ls
-sudo mount -a
-mount -ls
-ls /dev/sdd1 
-ls /dev/sdb1 
-ls /dev/sdc1 
-lsusb 
-ls /media/
-sudo mkdir /media/scandisk
-sudo mount /dev/sdd1 /media/scandisk
-sudo mount -t fat32 /dev/sdd1 /media/scandisk
-man mount
-sudo mount -t fat /dev/sdd1 /media/scandisk
+cd etl-unit-read-only/
+svn cleanup
+svn checkout http://etl-unit.googlecode.com/svn/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ls
-mkdir ~/rc-files
-cp .bashrc_additions ~/rc-files/
-cp .profile_additions ~/rc-files/
-cp .ackrc ~/rc-files/
-ll .ackrc 
-ll
-cp /home/mschober/cj/perforce/software/lib/vim_java_ide/mikes-bin/.ackrc ~/rc-files/
-cp /home/mschober/.vim/janus/vim/gvimrc ~/rc-files/
-cp /home/mschober/cj/perforce/personal/mschober//slim/config/.screenrc ~/rc-files/
-cd /home/mschober/cj/perforce/software/lib/vim_java_ide/mikes-bin/
-ll
-cd cj/perforce/software/lib/vim_java_ide/mikes-bin/
+cd
 ls
-ls -la
-cp .screenrc ~/rc-files/
-cp .ackrc ~/rc-files/
+mv downloads/apache-maven-2.2.1-bin.tar.gz apps/archives/
+cd apps/archives/
+ls
+tar xf apache-maven-2.2.1-bin.tar.gz 
+ls
+mv apache-maven-2.2.1 ..
+cd ..
+ls
+ln -s apache-maven-2.2.1/ maven
+cd maven
+ls
 ls bin/
-ls
-ls ~/rc-files/
-ls -la ~/rc-files/
-cat ~/rc-files/.screenrc 
 cd
-cd bin/
+vim .profile_additions 
+source .profile_additions 
+echo $MAVEN_HOME
 ls
-vim share 
+cd
+ls
+cat .setupPath.sh 
+echo $PATH
+echo $PATH | grep mvn
+echo $PATH | grep maven
+echo $PATH | grep apps
+grep elastic .setupPath.sh 
+grep -ir elastic *
+man fgrep
+fgrep -ir elastic *
+cat .setupPath.sh 
+grep elastic .setupPath.sh 
+rm .setupPath.sh 
+head -100 .profile_additions 
+vim .profile
+vim .profile_additions 
+source .profile_additions 
+source .profile_additions 
+cat .setupPath.sh 
+rm .setupPath.sh 
+rm .setupPath.sh 
+rm .setupPath.sh 
+source .profile_additions 
+cat .setupPath.sh 
+vim .profile_additions 
+echo $PATH
+cat .initial_path 
+tail -20 .profile_additions 
+clearPath 
+clearPath 
+clearPath 
+vim .profile_additions 
+clearPath 
+source .profile_additions 
+source .profile_additions 
+vim .profile_additions 
+source .profile_additions 
+cat .setupPath.sh 
+echo $PATH
+rm .setupPath.sh 
+source .profile_additions 
+cat .setupPath.sh 
 exit
-mount -ls
-lsusb 
-tail /var/log/messages
-ls /var/log/
-fdisk 
-fdisk -l
-man fdisk 
-fdisk -l -a
-man fdisk 
+ls bin/.profile_additions 
+cat bin/.profile_additions 
+exit
+share
+exit
+ks'
 ls
-ls rc-files/
-tar czf rc-files.tgz rc-files/
-ls rc-files
-ls rc-files~*
-ls rc-files*
-ifconfig 
+whic p4
+which p4
+p4 client -o
+cat .set
+cat .setupPath.sh 
+echo $PATH
+which mvn
+vim .profile_additions 
+source .profile_additions 
+echo $PATH
+cat .setupPath.sh 
+exit
+echo $PATH
+which mvn
+cat .set
+cat .setupPath.sh 
+vim .bash_profile
+exit
+vim .bash_profile
+vim .bashrc
+vim .profile
+exit
+vim .profile_additions 
+exit
+vim .bashrc
+vim .bash_profile
+exit
+vim .profile_additions 
+exit
+exit
+vim .bashrc
+vim .bash_profile
+vim .profile_additions 
+vim .bash_profile 
+vim .bashrc_additions 
+source .bashrc_additions 
+share
+vim .bashrc_additions 
+grep -i some .*rc
+vim .bashrc
+exit
+cat .setupPath.sh 
+vim .bashrc_additions 
+exit
+false
+true
+vim .bashrc_additions 
+exit
+man echo
+go omni-queries 
+ls
+cd
+ls
+ls *.rc
+ls .rc*
+ls .*rc
+cp .*rc bin/
+ls .prof*
+cp .profile* bin/
+rm .*rc
+rm .profile*
+ls .bash*
+cp .bash* bin/
+ls bin/.bash*
+ls bin/.bash* | xargs -I file ln -s file .
+ls bin/.bash* | xargs -I file ln -s file ..
+file .bashrc
+vim .bashrc
+ls bin/.profile* | xargs -I file ln -s file ..
+ls bin/.*rc | xargs -I file ln -s file ..
+file .bash_profile 
+ls bin/.bash_profile 
+ls bin/.bash* | xargs -I file ln -s file ..
+file .bash_profile 
+vim .bash_profile 
+ls -la
+rm .bash*
+ls -la
+ln bin/.bash* | xargs -I file ln -s file ..
+ls -la
+ln bin/.bash* | xargs -I file ln -s file ..
+ls -la
+ls bin/.bash* | xargs -I file ln -s file ..
+ls -la
+ls -la ..
+cd ..
+ls
+ls -la
+rm .bash*
+ls -la
+rm .*rc
+ls -la
+rm .profile*
+cd ..
+ls
+ls -la
+cd /home/mschober/
+ls -la
+ls bin/.bash* | xargs -I file ln -s file .
+ls bin/.profile* | xargs -I file ln -s file .
+ls bin/.*rc | xargs -I file ln -s file .
+ls -la
+exit
+ls
+ls -la
+echo $PATH
+ls | grep docu
+exit
+go omni
+ls
+mkdir scripts
+cd scripts/
+go omni-scripts 
+ls'
+ls
+cd omnidir
+ck omnidir
+go omni
+cd scripts/
+ck omni-scripts
+ls
+ls ../queries/first-twenty-ENA.hql .
+cp ../queries/first-twenty-ENA.hql .
+vim first-twenty-ENA.hql 
+ls
+vim first-twenty-ENA.hql 
+mv first-twenty-ENA.hql hotel-20130101-ENA.hql
+vim hotel-20130101-ENA.hql 
+rhq hotel-20130101-ENA.hql 
+ls
+ls
+ls logs
+vim `which rhq`
+man test
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+ls
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+ls
+vim `which rhq`
+rm -rf logs/
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+unset CREATE_IT
+rhq hotel-20130101-ENA.hql 
+unset CREATE_IT
+vim `which rhq`
+ls
+rm -rf logs/ out/
+ls
+rhq hotel-20130101-ENA.hql 
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+ls
+rhq hotel-20130101-ENA.hql 
+vim `which rhq`
+rhq hotel-20130101-ENA.hql 
+ls
+ls out/H-hotel-20130101-ENA.hql.out 
+wc -l out/H-hotel-20130101-ENA.hql.out 
+ls
+exit
+ls
+!
+!
+ls
+ls
+ls
+echo "whatup"
+echo "whatup"
+! 507
+! 507 507
+history 508
+history 508
+ls
+false
+false
+echo "hi" &
+kill -9 8932
+echo "hi" &
+ls
+cd doc
+cd documents/
+ls
+cd
+ls
+cd p4/
+ls
+cd depot/EDW/
+ck p4-edw
+ls
+cd Informatica/Dev/
+ck p4-infa-dev
+ls
+go p4-infa-dev 
+ls
+cd Folders/EWW/
+ck p4-infa-eww
+ls
+cd
+cd git/
+ls
+git status
+ls EDW/
+cd EDW/
+git status
+cd ..
+ls
+rm -rf EDW/
+p4 client -o
+p4 client
+git p4 clone //depot/EDW/Informatica/Dev/Folders/EWW/... EWW/...
+ls
+ls EWW/
+cd EWW/
+ls
+git status
+cd ..
+ls
+git status
+cd EWW
+ls
+ls -la
+ls ...
+ls -la ...
+ls -la ... | grep git
+ls
+cd ..
+ls
+rm -rf EWW
+git p4 clone //depot/EDW/Informatica/Dev/Folders/EWW/... EWW/
+ls ew
+ls
+ls EWW
+ls
+git status
+ls
+ls -la
+ls -la EWW/
+ls -la EWW/ | grep git
+ls EWW/.git/
+cd EWW
+git status
+git log
+ls
+ck infa-eww
+go infa-eww 
+pwd
+ls
+git diff wf_LZ_EWW_OMNI_HIT.XML
+echo "HI " >> wf_LZ_EWW_OMNI_HIT.XML 
+git diff wf_LZ_EWW_OMNI_HIT.XML
+git checkout wf_LZ_EWW_OMNI_HIT.XML
+git diff wf_LZ_EWW_OMNI_HIT.XML
+ls
+git status
+git git diff
+git status
+git diff
+git diff | wc -l
+git diff | wc -l | echo "/2" | bc
+git diff | wc -l | echo "/2"
+git diff | wc -l
+git diff | wc -l | bc "/2"
+man bc
+bc <(git diff | wc -l) <(echo "/2")
+echo "$(git diff | wc -l) /2" | bc
+ls
+wc -l wf_LZ_EWW_OMNI_HIT.XML 
+git status
+git diff
+man git
+git diff --no-color
+git status
+git checkout wf_LZ_EWW_OMNI_HIT.XML
+git status
+git diff | head
+git commit -m "no jira, using dummy mapping for hadoop transactions, deleted hadoop transactions mapping in designer"
+git commit -am "no jira, using dummy mapping for hadoop transactions, deleted hadoop transactions mapping in designer"
+ls
+cd
+share
+exit
+cd gi
+cd git/
+ls
+ls EWW/
+ls EWW/
+exit

@@ -1,24 +1,9 @@
 #== Start BashRC Functions ==#
 USER=`whoami`
-clearPath(){
-    PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games
-}
-
-fullPath(){
-    clearPath
-    source $HOME/.setupPath.sh
-    export PATH
-}
-
-exportDevDBEnv(){
-    export DEVDB_HOST=devdb.db.cj.com
-    export DEVDB_PORT=1521
-    export DEVDB_SID=devdb
-}
 
 exportPerforceEnv(){
-    export P4ROOT=/home/$USER/cj/perforce
-    export P4PORT=p4cj.vclk.net:1666
+    export P4ROOT=/home/$USER/p4
+    export P4PORT=perforce:1985
     export P4CLIENT=mike
     export P4USER=$USER
 }
@@ -32,6 +17,7 @@ exportPerforceMappings(){
 sourceScripts(){
     source $HOME/bin/ck.sh
     source $HOME/bin/go-package
+    for f in $HOME/functions/*.func; do source $f; done
 }
 
 function _gitp4 () {
@@ -40,11 +26,6 @@ function _gitp4 () {
    opts="clone rollback debug commit rebase branches sync submit"
 
    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
-}
-
-function become-rob() {
-    export GIT_PERSONAL=$HOME/cj/perforce/personal/rduffy/mainv2.0
-    echo "setting GIT_PERSONAL to ($GIT_PERSONAL)"
 }
  
 function become-mike() {
@@ -60,13 +41,22 @@ function set_tag() {
 
 #== Start BashRC Changs ==#
 sourceScripts
-exportDevDBEnv
 exportPerforceEnv
-exportPerforceMappings
+#exportPerforceMappings
 
-fullPath
+#fullPath
 
 _gitp4
 complete -o nospace -F _gitp4 git-p4
 complete -o nospace -F _gitp4 gp
 
+# http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04
+#PS1="\n\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\$?\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]\n\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
+
+# http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04
+#PS1="\n\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\342\224\200(\$(if [[ \$? == 0 ]]; then echo \"\[\033[01;32m\]\342\234\223\"; else echo \"\[\033[01;31m\]\342\234\227\"; fi)\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]\n\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
+PS1="\n\[\e[32;1m\](\[\e[37;1m\]\u\[\e[32;1m\])-(\[\e[37;1m\]jobs:\j\[\e[32;1m\])-(\[\e[37;1m\]\w\[\e[32;1m\])\n(\[\[\e[37;1m\]! \!\[\e[32;1m\])-> \[\e[0m\]"
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+#[[ -s "/home/mschober/.gvm/bin/gvm-init.sh" && -z $(which gvm-init.sh | grep '/gvm-init.sh') ]] && source "/home/mschober/.gvm/bin/gvm-init.sh"

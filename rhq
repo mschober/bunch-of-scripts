@@ -17,6 +17,44 @@ SCRIPT_TEMPLATE=$HOME/.script-template.hql
 LOG_DIR=$PWD/logs
 OUTPUT_DIR=$PWD/out
 
+
+#TODO: parameterize these functions
+function create_log_dir {
+    if [[ ! -d $LOG_DIR ]]; then
+        echo "need to create log dir: $LOG_DIR" 
+        echo -n "Would you like to create it? [Y/n]"
+        read CREATE_IT
+        CREATE_IT=${CREATE_IT:='Y'}
+
+        if [[ $CREATE_IT == 'Y' || $CREATE_IT == 'y' ]]; then
+            echo "creating dir $LOG_DIR"
+            mkdir $LOG_DIR
+        else
+            exit 1
+        fi
+    fi
+}
+
+#TODO: parameterize these functions
+function create_out_dir {
+    if [[ ! -d $OUTPUT_DIR ]]; then
+        echo "need to create out dir: $OUTPUT_DIR" 
+        echo -n "Would you like to create it? [Y/n]"
+        read CREATE_IT
+        CREATE_IT=${CREATE_IT:='Y'}
+
+        if [[ $CREATE_IT == 'Y' || $CREATE_IT == 'y' ]]; then
+            echo "creating dir $OUTPUT_DIR"
+            mkdir $OUTPUT_DIR
+        else
+            exit 1
+        fi
+    fi
+}
+
+create_log_dir
+create_out_dir
+
 SERVER=$(current-server)
 
 allow-ssh

@@ -1,0 +1,1 @@
+/home/mschober/bin/.tmp/remove-last-line.sh

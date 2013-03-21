@@ -3,6 +3,7 @@ alias s='sync'
 alias ct='connect-to'
 alias ip="ifconfig | grep 'inet addr:192.168' | cut -d ':' -f2 | cut -d ' ' -f1"
 alias sqldeveloper='~mschober/apps/sqldeveloper/sqldeveloper/bin/sqldeveloper'
+alias grep='grep --color=always'
 #
 # === VirtualBox ===
 #alias dbstart='nohup VBoxHeadless --startvm "Oracle11g32" &> /dev/null &'
