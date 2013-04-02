@@ -9,15 +9,17 @@ exportPerforceEnv(){
 }
 
 exportPerforceMappings(){
-    export PERSONAL_BRANCH=//cj/personal/$USER/main
-    export PERSONAL=$HOME/cj/perforce/personal/$USER/main
-    export PERSONAL_GIT=$HOME/cj/git-area/personal/$USER/main
+    #export PERSONAL_BRANCH=//cj/personal/$USER/main
+    #export PERSONAL=$HOME/cj/perforce/personal/$USER/main
+    #export PERSONAL_GIT=$HOME/cj/git-area/personal/$USER/main
+    #export PERSONAL_BRANCH=//cj/personal/$USER/main
+    export MAPPINGS=$(cat $HOME/.mappings)
 }
 
 sourceScripts(){
     source $HOME/bin/ck.sh
     source $HOME/bin/go-package
-    for f in $HOME/functions/*.func; do source $f; done
+    for f in $HOME/functions/*.func; do echo "sourcing $f"; source $f; done
 }
 
 function _gitp4 () {
@@ -42,7 +44,7 @@ function set_tag() {
 #== Start BashRC Changs ==#
 sourceScripts
 exportPerforceEnv
-#exportPerforceMappings
+exportPerforceMappings
 
 #fullPath
 

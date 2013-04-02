@@ -1,6 +1,15 @@
 #!/bin/bash
 
-scp ~/.ssh/id_rsa.pub chsxedwhdc002.idx.expedmz.com:
+source $FUNCTIONS/current-server.func
+
+SERVER=$(current-server)
+
+echo "copying local id_rsa.pub to server: $SERVER"
+scp $HOME/.ssh/id_rsa.pub $SERVER:
+
+echo "adding public rsa key to $SERVER:/.ssh/authorized_keys"
 rr 'cat id_rsa.pub >> .ssh/authorized_keys'
+
+echo "removing remote copy of rsa key file $SERVER/id_rsa.pub"
 rr 'rm id_rsa.pub'
 

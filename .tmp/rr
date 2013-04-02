@@ -10,7 +10,10 @@ function set_connection {
     CONNECTION=$(cat $CURRENT_CONNECTION)
 }
 
-[[ $# == 2 ]] && echo $1 > $CURRENT_CONNECTION
+if [[ $# == 2 ]]; then
+    echo $1 > $CURRENT_CONNECTION
+fi
+
 set_connection
 
 allow-ssh
