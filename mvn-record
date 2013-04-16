@@ -1,1 +1,6 @@
-.tmp/mvn-record
+#!/bin/bash
+
+theDate=`date-string`
+#theDir=`basename `pwd``
+theFile="$MVN_RESULTS/$theDate-results.txt"
+mvn $@ | tee $theFile

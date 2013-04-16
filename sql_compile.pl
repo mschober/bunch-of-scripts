@@ -1,1 +1,0 @@
-/home/mschober/cj/perforce/software/lib/vim_java_ide/sql_compile.pl

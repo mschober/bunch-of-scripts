@@ -1,1 +1,0 @@
-/home/mschober/.vim/janus/vim/vimrc
