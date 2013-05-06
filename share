@@ -1,15 +1,7 @@
 #!/bin/bash
 
-user=`whoami`
-label="dev$1"
 
-current_path=$(cd $(dirname $0)/../lib/screen ; pwd -P)
-name="-S $label"
-config="-c $current_path/.screenrc-share"
-param="$name $config"
+SESSION_NAME="dev${1:-1}"
+CONFIG=$HOME/.screenrc_share
 
-#need to find a way to export this and have it still be exported when screen fires up
-#source $HOME/bin/setup_screen_env.sh
-#screen_env $1 $label
- 
-screen $param
+screen -S $SESSION_NAME -c $CONFIG
