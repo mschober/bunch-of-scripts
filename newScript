@@ -31,3 +31,7 @@ echo '#!/bin/bash' > $LOCATION/$SCRIPTNAME
 echo "$COMMAND" >> $LOCATION/$SCRIPTNAME
 chmod +x $LOCATION/$SCRIPTNAME
 ln -s $LOCATION/$SCRIPTNAME $HOME/bin/$SCRIPTNAME
+
+echo "Created new script: $(file $HOME/bin/$SCRIPTNAME)"
+echo "With content: "
+cat $HOME/bin/$SCRIPTNAME

@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+import sys
+from datetime import datetime
+
+def to_date(time):
+    date_str = time.split()[0]
+    return datetime.strptime(date_str, "%Y-%m-%d")
+
+t1 = sys.argv[1]
+t2 = sys.argv[2]
+d1 = to_date(t1)
+d2 = to_date(t2)
+print d1 - d2
+
