@@ -1,12 +1,4 @@
 #!/bin/bash
 
-source $HOME/bin/ck.sh
-
-if [ $1 ]; then
-    cd $1
-else
-    gock personal
-fi;
-
 echo "Rebuilding tags for $PWD"
-ctags --recurse=yes --links=yes --java-types=cimp --exclude='database-dw' --exclude='target' --exclude='*.js' --exclude='*Bug*' --exclude='*.as' #-f .tags
+ctags --recurse=yes --links=yes --java-types=cimp --exclude='target' --exclude='*.js' --exclude='*Bug*' -f .tags
