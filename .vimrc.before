@@ -65,7 +65,8 @@ map ,pe :!p4 edit %<CR>
 map ,sn :set number!<CR>
 map ,bp :r!manualBreakpoint<CR>
 map ,gd :!git diff %<CR>
-map ,rh :!cat % \| ssh chelhdpdev003.karmalab.net "cat - \| hive" \| tee $HOME/queries/hive/results/$$.hive \| less<CR><CR>
+map ,hp :!cat % \| ssh chsxedwhdc002.idx.expedmz.com "cat - \| hive -hiveconf hive.cli.print.header=true" > >(tee $HOME/queries/hive/results/$$.hive) 2> >(tee $HOME/queries/hive/errors/$$.hive >&2) \| less<CR><CR>
+map ,hd :!cat % \| ssh chelhdpdev003.karmalab.net "sudo -u ewwetl hive -hiveconf hive.cli.print.header=true -e \"$(cat - )\"" > >(tee $HOME/queries/hive/results/$$.hive) 2> >(tee $HOME/queries/hive/errors/$$.hive >&2) \| less<CR><CR>
 
 vnoremap _( <ESC>`>a)<ESC>`<i(<ESC>
 vnoremap _" <ESC>`>a"<ESC>`<i"<ESC>
