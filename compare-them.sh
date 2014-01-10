@@ -31,4 +31,4 @@ done
 FILE1=${@:$OPTIND:1}
 FILE2=${@:$OPTIND+1:1}
 
-comm <($FUNC $FILE1) <($FUNC $FILE2) | tee $FILE
+comm <($FUNC $FILE1) <($FUNC $FILE2) | tee $OUTFILEFILE

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+HIGHLIGHT="$1"
+CMD='ls -rt'
+[[ -n $HIGHLIGHT ]] && eval "$CMD | grep $HIGHLIGHT | tail" || eval $CMD | tail

@@ -5,8 +5,19 @@ read ticketNumber
 echo "Description"
 read description
 
+export STICKIES=$HOME/.stickies
+
 fileName=$STICKIES/$ticketNumber
 
 echo
-echo "<a href=\"https://bugzilla.vclk.net/show_bug.cgi?id=$ticketNumber\">$ticketNumber</a><br>$description<hr>" | tee $fileName
-echo "<a href=\"http://cjpad.cj.com/qa-$ticketNumber\">QA STEPS</a><br>" | tee -a $fileName
+STATIC_URL="https://jira/jira/browse/EDW"
+
+if [[ $ticketNumber > 80000 ]]; then
+  STATIC_URL+='-'
+else
+  STATIC_URL+='X-'
+fi
+
+PAD_STATIC_URL="http://chelhdpdev003.karmalab.net:3001/p"
+echo "<a href=\"$STATIC_URL$ticketNumber\">$ticketNumber</a><br>$description<hr>" | tee $fileName
+echo "<a href=\"$PAD_STATIC_URL/qa-$ticketNumber\">QA STEPS</a><br>" | tee -a $fileName
