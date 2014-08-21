@@ -1,1 +1,1 @@
-/Users/mschober/git/shell/checkpoints.sh
+/Users/mschober/shell/checkpoints.sh

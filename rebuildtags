@@ -1,4 +1,1 @@
-#!/bin/bash
-
-echo "Rebuilding tags for $PWD"
-ctags --recurse=yes --links=yes --java-types=cimp --exclude='target' --exclude='*.js' --exclude='*Bug*' -f .tags
+/Users/mschober/shell/rebuildtags

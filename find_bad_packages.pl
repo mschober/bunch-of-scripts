@@ -1,0 +1,1 @@
+/Users/mschober/shell/find_bad_packages.pl
