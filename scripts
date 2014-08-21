@@ -1,0 +1,5 @@
+#!/bin/bash
+
+hr
+ls $HOME/bin
+hr

@@ -1,37 +1,26 @@
 #!/bin/bash
 
-LOCATION=$HOME/bin/.tmp
-
-function getScriptName(){
-#    if [[ -z $1 ]]; then
-#        echo need to enter script name, exiting
-#        exit
-#    else
-        SCRIPTNAME=$1
-#    fi
-}
-
-function getCommand(){
-#    if [[ -z $2 ]]; then
-#        echo missing script command string, exiting
-#        exit
-#    else
-        COMMAND=$2
-#    fi
-}
-
-#getScriptName
-#getCommand
-
 SCRIPTNAME=$1
-COMMAND=$2
+BUCKET=$2
+COMMAND=$3
 
-touch $LOCATION/$SCRIPTNAME
-echo '#!/bin/bash' > $LOCATION/$SCRIPTNAME
-echo "$COMMAND" >> $LOCATION/$SCRIPTNAME
-chmod +x $LOCATION/$SCRIPTNAME
-ln -s $LOCATION/$SCRIPTNAME $HOME/bin/$SCRIPTNAME
+BINPATH=$HOME/bin
+SCRIPTPATH=$BINPATH/$BUCKET
+FULLPATH=$SCRIPTPATH/$SCRIPTNAME
+LINKPATH=$BINPATH/$SCRIPTNAME
 
-echo "Created new script: $(file $HOME/bin/$SCRIPTNAME)"
+mkdir -v $SCRIPTPATH
+
+if [[ -f $FULLPATH ]]; then
+  echo $FULLPATH exists, exiting
+  exit 1
+fi
+
+echo '#!/bin/bash' > $FULLPATH
+echo "$COMMAND" >> $FULLPATH
+chmod +x $FULLPATH
+ln -s $FULLPATH $LINKPATH
+
+echo "Created new script: $(file -h $LINKPATH)"
 echo "With content: "
-cat $HOME/bin/$SCRIPTNAME
+cat $LINKPATH
