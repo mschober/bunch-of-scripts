@@ -1,3 +1,0 @@
-#!/bin/bash
-
-mysql -ucjurl -pqa%555 -hcjtools101.wl.cj.com cjurldb

@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ssh mschober@appworx101.la1.cj.com $@

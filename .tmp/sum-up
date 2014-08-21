@@ -1,2 +1,2 @@
 #!/bin/bash
-paste -sd+ $1 | bc
+paste -sd+ - | bc

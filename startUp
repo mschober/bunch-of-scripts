@@ -1,7 +1,0 @@
-#!/bin/bash
-
-
-function startUp(){
-    screen -S dev
-	go waitlist
-}

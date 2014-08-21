@@ -1,3 +1,0 @@
-#!/bin/bash
-LOCAL_USER=${@-s267}
-rlwrap sqlplus ${LOCAL_USER}/test@//devdbf01.db.cj.com:1541/devdbf01
