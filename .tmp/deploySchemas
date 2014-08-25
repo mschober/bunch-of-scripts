@@ -1,2 +1,0 @@
-#!/bin/bash
-cd; java -jar schemas-main-SNAPSHOT.one-jar.jar locator=T5

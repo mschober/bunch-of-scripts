@@ -1,2 +1,0 @@
-#!/bin/bash
-curl http://build105.wl.cj.com:8181/user/mschober/my-views/view/mschober/job/main-cjo/6569/artifact/schemas/target/schemas-main-SNAPSHOT.one-jar.jar; java -jar schemas-main-SNAPSHOT.one-jar.jar locator=T5

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-source $GOCK_HOME
-gock resin-test-container
-
-mvn -Dmdep.outputFile=classpath.out dependency:build-classpath
-java -cp `cat classpath.out`:target/classes:target/test-classes/ cj.testcontainer.ResinRunner
-

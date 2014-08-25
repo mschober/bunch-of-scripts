@@ -1,2 +1,0 @@
-#!/bin/bash
-grep '\.this-file-tells-perforce-that-this-is-a-directory'

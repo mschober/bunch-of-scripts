@@ -1,2 +1,0 @@
-#!/bin/bash
-ssh -X oracle@localhost -p 2222 $@

@@ -18,7 +18,7 @@ function ck {
     fi
 }
 
-function go {
+function go2 {
     gock $@
 }
 function gock {

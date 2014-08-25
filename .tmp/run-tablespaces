@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source '/home/mschober/bin/ck.sh'
-gock devdb-local
-sqlplus sys/sys@devdb as sysdba @ devdb_tablespaces.sql
-

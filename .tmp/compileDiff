@@ -1,2 +1,0 @@
-#!/bin/bash
-comm -3 <( ls | sort ) <(cat compile.txt | sort)

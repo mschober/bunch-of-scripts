@@ -1,0 +1,5 @@
+#!/bin/bash
+set -o nounset
+FUNCS_DIR=$HOME/functions
+
+cat $FUNCS_DIR/*.func | awk '/^function/ { print $2 }' | awk -F '(' '{ print $1 }'

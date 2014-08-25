@@ -1,2 +1,0 @@
-#!/bin/bash
-lower `date | sed -e 's/ /-/g'`

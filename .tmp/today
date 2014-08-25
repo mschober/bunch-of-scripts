@@ -1,2 +1,0 @@
-#!/bin/bash
-date-string | cut -d '-' -f1

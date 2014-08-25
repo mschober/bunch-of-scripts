@@ -1,1 +1,0 @@
-/Users/mschober/shell/format_sql_block.pl

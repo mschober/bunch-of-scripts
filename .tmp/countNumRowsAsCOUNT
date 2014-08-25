@@ -1,2 +1,0 @@
-#!/bin/bash
-export COUNT=`perl -e 'print $1/2'`

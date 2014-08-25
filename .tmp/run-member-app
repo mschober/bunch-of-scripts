@@ -1,4 +1,0 @@
-#!/bin/bash
-SERVER_ROOT=/home/mschober/run-app/member-web
-cd $SERVER_ROOT
-/usr/local/resin/bin/httpd.sh -root-directory $SERVER_ROOT -conf /home/mschober/run-app/member-web/conf/resin.conf

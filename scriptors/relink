@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -o nounset
+
+SCRIPTNAME=$1
+BUCKET=${2:-''}
+BINPATH=$HOME/bin
+BUCKETS="$(ls -d1 $BINPATH/*/)"
+echo "$BUCKETS" && exit 1
+
+function _EXIT(){
+  echo "$1, exiting..." && exit 1
+}
+
+which -s $SCRIPTNAME || _EXIT "No script: $SCRIPTNAME"
+
+if [[ -z $BUCKET ]]; then 
+  file -h $(which $SCRIPTNAME)
+else
+  test -d $BINPATH/$BUCKET || _EXIT "No $BINPATH/$BUCKET"
+fi

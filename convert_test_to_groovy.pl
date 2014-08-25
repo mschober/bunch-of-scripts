@@ -1,1 +1,0 @@
-/Users/mschober/shell/convert_test_to_groovy.pl

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-curl -Lo- https://bit.ly/janus-bootstrap | bashgit clone https://github.com/vim-scripts/Align
-mkdir janus
-

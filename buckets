@@ -1,0 +1,9 @@
+#!/bin/bash
+set -o nounset
+
+function full_paths(){
+  #ls -d $HOME/bin/*/
+  find $HOME/bin -type d | grep -v ".git"
+}
+
+full_paths

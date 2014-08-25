@@ -1,4 +1,0 @@
-#!/bin/bash
-
-FILES=findFiles
-for f in `echo $FILES`; do $1 $f; done

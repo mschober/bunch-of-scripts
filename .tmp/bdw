@@ -1,4 +1,0 @@
-#!/bin/bash
-source $GOCK_HOME
-gock datawarehouse
-mvn clean install -Pdw

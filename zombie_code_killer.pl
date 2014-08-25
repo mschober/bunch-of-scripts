@@ -1,1 +1,0 @@
-/Users/mschober/shell/zombie_code_killer.pl

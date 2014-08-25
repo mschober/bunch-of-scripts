@@ -1,2 +1,0 @@
-#!/bin/bash
-ack-grep $1 ./src/test/java/cj/dw/fact/CCommissionsTest.java

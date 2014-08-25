@@ -1,2 +1,0 @@
-#!/bin/bash
-echo "select count(*) from $1;"

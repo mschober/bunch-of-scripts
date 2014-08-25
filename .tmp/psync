@@ -1,4 +1,0 @@
-#!/bin/bash
-
-p4 sync $MAPPINGS
-

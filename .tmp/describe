@@ -1,2 +1,0 @@
-#!/bin/bash
-p4 describe -dub  "$1" | diff_painter.pl | less -RS

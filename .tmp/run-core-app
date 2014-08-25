@@ -1,2 +1,0 @@
-#!/bin/bash
-/usr/local/resin/bin/httpd.sh -root-directory /home/mschober/run-app/core-ts -conf /home/mschober/run-app/core-ts/conf/resin.conf

@@ -1,6 +1,6 @@
 #!/bin/bash
-SCRIPTS_DIR=$HOME/functions
+set -o nounset
 
 hr
-cat $SCRIPTS_DIR/*.func | awk '/^function/ { print $2 }' | awk -F '(' '{ print $1 }' | column
+grep "$(funcs)" $ENV_FUNCTIONS | column
 hr

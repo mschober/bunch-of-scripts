@@ -1,2 +1,0 @@
-#!/bin/bash
-rlwrap sqlplus mschober/qa%555@tcjoweb5

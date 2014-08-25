@@ -1,3 +1,0 @@
-#!/bin/bash
-
-git-status-list | xargs -I{} bash -c 'basename {}' | cut -d '.' -f1

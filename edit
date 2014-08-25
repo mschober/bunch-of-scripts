@@ -1,1 +1,2 @@
-/Users/mschober/bin/.tmp/edit
+#!/bin/bash
+vim $(which $1)

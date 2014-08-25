@@ -1,1 +1,3 @@
-/Users/mschober/bin/.tmp/show
+#!/bin/bash
+set -o nounset
+cat $(which $1)

@@ -1,2 +1,0 @@
-#!/bin/bash
-sqlplus sys/sys@devdb AS SYSDBA

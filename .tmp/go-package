@@ -1,8 +1,0 @@
-#!/bin/bash
-
-function go-package() {
-    COMPLETE_PATH=`showPackagesFor $1 | grep $2`
-    echo changing to $COMPLETE_PATH
-    cd $COMPLETE_PATH
-}
-

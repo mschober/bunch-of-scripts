@@ -1,2 +1,0 @@
-#!/bin/bash
-ps -ef | grep -ve color | grep -ve grep | grep -ve pidFor | grep "$1" | cut -d ' ' -f2

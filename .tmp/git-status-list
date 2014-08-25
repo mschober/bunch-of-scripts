@@ -1,2 +1,0 @@
-#!/bin/bash
-git status -z | grep modified | cut -d ':' -f2 | cut -d ' ' -f4

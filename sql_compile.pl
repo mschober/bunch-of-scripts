@@ -1,1 +1,0 @@
-/Users/mschober/shell/sql_compile.pl

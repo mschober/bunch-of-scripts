@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo $1 | perl -pi -e "s;//cj/datafixes;$HOME/cj/perforce/datafixes;"

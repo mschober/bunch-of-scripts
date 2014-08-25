@@ -1,8 +1,0 @@
-#!/bin/bash
-
-source $GOCK_HOME
-gock personal
-
-VBoxManage snapshot Oracle11g32 take $1
-echo $1 > /home/mschober/.current-snap.vbox
-

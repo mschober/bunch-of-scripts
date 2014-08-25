@@ -1,8 +1,13 @@
 #!/bin/bash
 
+set -o nounset
+NO_BUCKET_ERROR="No bucket choosen"
+
 SCRIPTNAME=$1
-BUCKET=$2
-COMMAND=$3
+BUCKET=${2:-""} #default to BINPATH
+COMMAND=${3:-""}
+
+#[[ $BUCKET = $NO_BUCKET_ERROR ]] && echo -e "Script: $SCRIPTNAME\n$NO_BUCKET_ERROR\nExiting" && exit 1
 
 BINPATH=$HOME/bin
 SCRIPTPATH=$BINPATH/$BUCKET
@@ -17,10 +22,16 @@ if [[ -f $FULLPATH ]]; then
 fi
 
 echo '#!/bin/bash' > $FULLPATH
-echo "$COMMAND" >> $FULLPATH
+echo 'set -o nounset' >> $FULLPATH
 chmod +x $FULLPATH
 ln -s $FULLPATH $LINKPATH
 
-echo "Created new script: $(file -h $LINKPATH)"
+if [[ -z $COMMAND ]]; then
+  edit $SCRIPTNAME
+else
+  echo "$COMMAND" >> $FULLPATH
+fi
+
+echo "Created new script, temporarily linking to: $(file -h $LINKPATH)"
 echo "With content: "
-cat $LINKPATH
+cat $FULLPATH

@@ -1,7 +1,0 @@
-#!/bin/bash
-
-
-TABLE=$1
-
-rr "hive -e \"use lz; describe $TABLE\"" | sed '1,5d' | sed '$d' | awk '{ printf( "%s", $1"	"); }'
-

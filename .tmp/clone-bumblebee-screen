@@ -1,2 +1,0 @@
-#!/bin/bash
-screenclone -d :8 -x 1

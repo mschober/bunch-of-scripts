@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ $1 == 'michael' ]; then
-    ssh michael@nanobotspot.com
-fi
-
-
