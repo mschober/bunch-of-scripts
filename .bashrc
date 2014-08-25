@@ -208,7 +208,7 @@
 # 
 # alias cd=cd_func
 
-source $HOME/.bashrc_additions
+time source $HOME/.bashrc_additions
 export CATALINA_HOME=$HOME/Tomcat/apache-tomcat-7.0.50
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
