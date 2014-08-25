@@ -1,2 +1,26 @@
 #!/bin/bash
-vim $(which $1)
+
+function _CHECK_ALIASES(){
+  awk -F= '{ print $1 }' $HOME/.bash_aliases | awk '{ print $2 }' | grep --silent "^${1}$"
+}
+
+function _EDIT_ALIAS(){
+  echo "create a temp file, save the edits from vim, sed the changes into aliases"
+  grep $1 $HOME/.bash_aliases
+}
+
+function _CHECK_FUNCTIONS(){
+  funcs | grep --silent "^${1}$"
+}
+
+function _EDIT_FUNCTION(){
+  vim $HOME/functions/${1}.func
+}
+
+function _DECIDE_EDIT(){
+  _CHECK_ALIASES $1 && _EDIT_ALIAS $1
+  _CHECK_FUNCTIONS $1 && _EDIT_FUNCTION $1
+}
+
+which -s $1 && vim $(which $1) || _DECIDE_EDIT $1
+
