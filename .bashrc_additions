@@ -1,50 +1,75 @@
 #== Start BashRC Functions ==#
 USER=`whoami`
 
+function hr(){
+  printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+}
+export -f hr
+
 exportPerforceEnv(){
-    export P4ROOT=/home/$USER/p4
-    export P4PORT=perforce:1985
-    export P4CLIENT=mike
-    export P4USER=$USER
+    export P4CONFIG=$HOME/.p4config
 }
 
-exportPerforceMappings(){
-    #export PERSONAL_BRANCH=//cj/personal/$USER/main
-    #export PERSONAL=$HOME/cj/perforce/personal/$USER/main
-    #export PERSONAL_GIT=$HOME/cj/git-area/personal/$USER/main
-    #export PERSONAL_BRANCH=//cj/personal/$USER/main
-    export MAPPINGS=$(cat $HOME/.mappings)
+
+sourceDB2_Profile() {
+    [[ -z $DB2_HOME ]] && echo please set DB2_HOME
+    source $DB2_HOME/cfg/db2profile
 }
+
+#exportPerforceMappings(){
+#    export PERSONAL_BRANCH=//cj/personal/$USER/main
+#    export PERSONAL=$HOME/cj/perforce/personal/$USER/main
+#    export PERSONAL_GIT=$HOME/cj/git-area/personal/$USER/main
+#    export PERSONAL_BRANCH=//cj/personal/$USER/main
+#    export MAPPINGS=$(cat $HOME/.mappings)
+#}
+
+
+function open_logs() { 
+  open $(sed 's/file/smb/' <<< $1)
+}
+
+alias ol='open_logs'
 
 sourceScripts(){
-    source $HOME/bin/ck.sh
-    source $HOME/bin/go-package
-    for f in $HOME/functions/*.func; do echo "sourcing $f"; source $f; done
+    source $HOME/bin/shell/checkpoints.sh
+    SCRIPTS_DIR=$HOME/functions
+    export ENV_FUNCTIONS=$SCRIPTS_DIR/.env_functions
+    echo "Scripts : [$(show scripts | tr '\n' '\t')]"
+    scripts
+    echo
+    echo "Sourced functions : [$(show functions | tr '\n' '\t')]"
+    source <(cat $SCRIPTS_DIR/*.func)
+    declare -F | awk '{ print $3 }' > $ENV_FUNCTIONS
+    functions
+    echo
+    echo "Aliases : [$(type aliases)]"
+    aliases
+    source $HOME/open-sourced/git/contrib/completion/git-completion.bash
 }
 
 function _gitp4 () {
    local cur opts
    cur="${COMP_WORDS[COMP_CWORD]}"
    opts="clone rollback debug commit rebase branches sync submit"
-
    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 }
- 
-function become-mike() {
-    source $HOME/.profile_additions
-    echo "setting GIT_PERSONAL to ($GIT_PERSONAL)"
-}
-
-function set_tag() {
-    export GIT_PERSONAL=$(dirname `find_up pom.xml`)
-    echo "setting GIT_PERSONAL to ($GIT_PERSONAL)"
-}
-
 
 #== Start BashRC Changs ==#
+
 sourceScripts
+#sourceDB2_Profile
 exportPerforceEnv
-exportPerforceMappings
+#exportPerforceMappings
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+function remote_run(){
+  export FAB_ENV=/Users/mschober/dev/lng/python/manual/env
+  hosts="$(seq -f $HOST_PREFIX%02g $HOST_COUNT | paste -sd "," -)"
+  $FAB_ENV/bin/fab -H "$hosts" -- "$@"
+}
+
 
 #fullPath
 

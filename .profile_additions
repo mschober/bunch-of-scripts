@@ -3,6 +3,10 @@ includeRubyVersionManger(){
     [[ -s "/home/mschober/.rvm/scripts/rvm" ]] && source "/home/mschober/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 }
 
+function _SET_PATH(){
+  export PATH=$(echo "${PATH}:$(buckets | tr '\n' ':')")
+}
+
 createSetupPathScript() {
     SETUP_PATH=$HOME/.setupPath.sh
     rm $SETUP_PATH
@@ -21,7 +25,6 @@ overwriteScriptWithNewExports(){
     pathExports
 }
 
-
 appendToSetup(){
     echo $@ >> $SETUP_PATH
 }
@@ -31,40 +34,14 @@ appendRun() {
 }
 
 globalEnvVariables(){
-    appendRun 'export JAVA_HOME=$APPS_HOME/jdk'
-    appendRun 'export APPS_HOME=/home/mschober/apps'
+    appendRun 'export APPS_HOME=$HOME/apps'
+    appendRun 'export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
     appendRun 'export LC_COLLATE=POSIX'
-    appendRun 'export GOCK_HOME=$HOME/bin/ck.sh' 
+    appendRun 'export GOCK_HOME=$HOME/bin/checkpoints.sh'
     appendRun 'export FUNCTIONS=$HOME/functions'
-    appendRun 'export SPROCS=/cygdrive/c/sprocs/'
-    appendRun 'export MAVEN_HOME=$APPS_HOME/maven'
-    #appendRun 'export GIT_PERSONAL=$HOME/cj/personal/mschober/main' 
-    #appendRun 'export CJP4WORKSPACE=$HOME/cj/perforce'
-    #appendRun 'export MVN_RESULTS=$HOME/cj/mvn-results'
-    #appendRun 'export STICKIES=$HOME/cj/stickies'
-    #appendRun 'export CURRENT_SCHEMA=$HOME/current-schema'
-    #appendRun 'export GRADLE_HOME=$APPS_HOME/gradle'
-    #appendRun 'export EVERPAD_HOME=$APPS_HOME/everpad'
-    #appendRun 'export ELASTIC_SEARCH_HOME=$APPS_HOME/elasticsearch'
-    #appendRun 'export ARDUINO_HOME=$APPS_HOME/arduino'
-    #appendRun 'export TITANIUM_HOME=$APPS_HOME/titanium'
-    #appendRun 'export HADOOP_HOME=$APPS_HOME/hadoop'
-    #appendRun 'export PLAY_HOME=$APPS_HOME/play'
-    #appendRun 'export SCALA_HOME=$APPS_HOME/scala'
-    #appendRun 'export PIG_HOME=$APPS_HOME/pig'
-    #appendRun 'export IDEA_HOME=$APPS_HOME/idea'
-    #appendRun 'export SQLDEVELOPER=$APPS_HOME/sqldeveloper/sqldeveloper'
-    #appendRun 'export HBASE_HOME=$APPS_HOME/hbase'
-    #appendRun 'export ZOOKEEPER_HOME=$HBASE_HOME'
-    #appendRun 'export SQOOP_HOME=$APPS_HOME/sqoop'
-    #appendRun 'export MONGO=$APPS_HOME/mongo'
-    #appendRun 'export DEVDB_HOST=devdb.db.cj.com'
-    #appendRun 'export DEVDB_PORT=1521'
-    #appendRun 'export DEVDB_SID=devdb'
-    #appendRun 'export BUILD_USER=spud'
-    #appendEchoExport "export SQLDEVELOPER=$APPS_HOME/sqldeveloper"
-    #appendEchoExport "export ECLIPSE=$APPS_HOME/eclipse"
-    #appendEchoExport "export P4V_HOME=$APPS_HOME/p4v"
+    appendRun 'export JIRA=$HOME/Desktop/mschober/expedia/eww/jira/'
+    #appendRun 'export NODE_HOME=$HOME/apps/usr/local/node'
+    appendRun 'export PROJECT_HOME=$HOME/dev/lng/python/exp'
 }
 
 pathExports(){
@@ -73,33 +50,13 @@ pathExports(){
     appendToSetup 'PATH=$PATH:$HOME/bin'
     appendToSetup 'PATH=$PATH:$HOME/bin/filters'
     appendToSetup 'PATH=$PATH:$MAVEN_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$HOME/sqllib/bin'
-    #appendToSetup 'PATH=$PATH:$SOFTWARE_FOLDER/bin'
-    #appendToSetup 'PATH=$PATH:$APPS_HOME/projector/bin'
-    #appendToSetup 'PATH=$PATH:$SOFTWARE_FOLDER/shared-scripts/bin'
-    #appendToSetup 'PATH=$PATH:$HADOOP_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$PIG_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$IDEA_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$HBASE_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$SQOOP_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$ARDUINO_HOME'
-    #appendToSetup 'PATH=$PATH:$SCALA_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$PLAY_HOME'
-    #appendToSetup 'PATH=$PATH:$TITANIUM_HOME'
-    #appendToSetup 'PATH=$PATH:$SOFTWARE_FOLDER/cdh/cdh3u2/bin'
-    #appendToSetup 'PATH=$PATH:$GRADLE_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$EVERPAD_HOME/bin'
-    #appendToSetup 'PATH=$PATH:$ELASTIC_SEARCH_HOME/bin'
-    #appendToSetup PATH=$P4V_HOME/bin:$PATH
-    #appendToSetup PATH=$SQLDEVELOPER:$PATH
-    #appendToSetup PATH=$ECLIPSE:$PATH
+    #appendToSetup 'PATH=$PATH:$NODE_HOME/bin'
 }
 
 clearPath(){
-    echo "resetting path based on file: $HOME/.initial_path"
-    PATH=`cat $HOME/.initial_path`
+    echo "Resetting path based on (/etc/paths)"
+    PATH=$(tail -r /etc/paths | tr '\n' ':' | sed 's/:$//')
     echo $PATH
-    #PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/X11:/usr/games
 }
 
 fullPath(){
@@ -111,4 +68,6 @@ fullPath(){
 
 #== Start Profile Changes ==#
 createSetupPathScript
+_SET_PATH
+clean-bin-links
 includeRubyVersionManger

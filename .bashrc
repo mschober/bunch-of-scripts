@@ -40,7 +40,13 @@
 # shopt -s nocaseglob
 #
 # Make bash append rather than overwrite the history on disk
-# shopt -s histappend
+ shopt -s histappend
+# Put this somewhere in your dotfiles to turn on recursive globbing
+# https://gist.github.com/samnang/1759336
+ shopt -s globstar
+# http://askubuntu.com/questions/41891/bash-auto-complete-for-environment-variables
+# To get the old behaivior back, use the command
+ shopt -s direxpand
 #
 # When changing directory small typos can be ignored by bash
 # for example, cd /vr/lgo/apaache would find /var/log/apache
@@ -61,7 +67,7 @@
 #
 # Uncomment to turn on programmable completion enhancements.
 # Any completions you add in ~/.bash_completion are sourced last.
-# [[ -f /etc/bash_completion ]] && . /etc/bash_completion
+ [[ -f /etc/bash_completion ]] && . /etc/bash_completion
 
 # History Options
 #
@@ -76,6 +82,11 @@
 #
 # Whenever displaying the prompt, write the previous line to disk
 # export PROMPT_COMMAND="history -a"
+
+# If Home bin add it to the path
+# if [ -d "${HOME}/bin" ]; then
+#   export PATH=$PATH:${HOME}/bin
+# fi
 
 # Aliases
 
@@ -96,8 +107,8 @@
 # alias mv='mv -i'
 #
 # Default to human readable figures
-# alias df='df -h'
-# alias du='du -h'
+ alias df='df -h'
+ alias du='du -h'
 #
 # Misc :)
 # alias less='less -r'                          # raw control characters
@@ -125,9 +136,9 @@
 # Functions
 #
 # Some people use a different file for functions
-# if [ -f "${HOME}/.bash_functions" ]; then
-#   source "${HOME}/.bash_functions"
-# fi
+ if [ -f "${HOME}/.bash_functions" ]; then
+   source "${HOME}/.bash_functions"
+ fi
 #
 # Some example functions:
 #
@@ -197,4 +208,12 @@
 # 
 # alias cd=cd_func
 
-source ${HOME}/.bashrc_additions
+source $HOME/.bashrc_additions
+export CATALINA_HOME=$HOME/Tomcat/apache-tomcat-7.0.50
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added for virtualenvwrapper
+export WORKON_HOME=/Users/mschober/.virtualenvs
+export PROJECT_HOME=/Users/mschober/projects
+source /usr/local/bin/virtualenvwrapper.sh
