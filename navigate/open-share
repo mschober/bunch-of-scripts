@@ -1,5 +1,6 @@
 #!/bin/bash
-set -o nounset
+
+SHARE_PATH=${1-:""}
 
 
 function _OPEN_LOG(){
@@ -15,7 +16,9 @@ function deal_with_backslashes(){
   echo -E "$SHARE_PATH"
 }
 
-SHARE_PATH=$(deal_with_backslashes | tr '\' '/')
+if [[ -z $1 ]]; then
+  SHARE_PATH=$(deal_with_backslashes | tr '\' '/')
+fi
 
 grep --silent '^file:' <<< "$SHARE_PATH" \
   && _OPEN_LOG "$SHARE_PATH"
