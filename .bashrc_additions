@@ -6,30 +6,10 @@ function hr(){
 }
 export -f hr
 
-exportPerforceEnv(){
-    export P4CONFIG=$HOME/.p4config
-}
-
-
 sourceDB2_Profile() {
     [[ -z $DB2_HOME ]] && echo please set DB2_HOME
     source $DB2_HOME/cfg/db2profile
 }
-
-#exportPerforceMappings(){
-#    export PERSONAL_BRANCH=//cj/personal/$USER/main
-#    export PERSONAL=$HOME/cj/perforce/personal/$USER/main
-#    export PERSONAL_GIT=$HOME/cj/git-area/personal/$USER/main
-#    export PERSONAL_BRANCH=//cj/personal/$USER/main
-#    export MAPPINGS=$(cat $HOME/.mappings)
-#}
-
-
-function open_logs() { 
-  open $(sed 's/file/smb/' <<< $1)
-}
-
-alias ol='open_logs'
 
 sourceScripts(){
     source $HOME/bin/shell/checkpoints.sh
@@ -59,8 +39,6 @@ function _gitp4 () {
 
 sourceScripts
 #sourceDB2_Profile
-exportPerforceEnv
-#exportPerforceMappings
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 

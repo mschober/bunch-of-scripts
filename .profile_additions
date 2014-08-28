@@ -7,6 +7,11 @@ function _SET_PATH(){
   export PATH=$(echo "${PATH}:$(buckets | tr '\n' ':')")
 }
 
+exportPerforceEnv(){
+    export P4CONFIG=$HOME/.p4config
+}
+
+
 createSetupPathScript() {
     SETUP_PATH=$HOME/.setupPath.sh
     rm $SETUP_PATH
@@ -68,6 +73,7 @@ fullPath(){
 
 #== Start Profile Changes ==#
 createSetupPathScript
+exportPerforceEnv
 _SET_PATH
 clean-bin-links
 includeRubyVersionManger

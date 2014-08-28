@@ -1,0 +1,24 @@
+#!/bin/bash
+set -o nounset
+
+
+function _OPEN_LOG(){
+  open $(sed 's/file/smb/' <<< "$1")
+}
+
+function _OPEN_SHARE(){
+  open $(sed 's/^/smb:/' <<< "$1")
+}
+
+function deal_with_backslashes(){
+  read -r SHARE_PATH
+  echo -E "$SHARE_PATH"
+}
+
+SHARE_PATH=$(deal_with_backslashes | tr '\' '/')
+
+grep --silent '^file:' <<< "$SHARE_PATH" \
+  && _OPEN_LOG "$SHARE_PATH"
+
+grep --silent '^//' <<< "$SHARE_PATH" \
+  && _OPEN_SHARE "$SHARE_PATH"
