@@ -18,6 +18,7 @@ function _CHECK_FUNCTIONS(){
 
 function _EDIT_FUNCTION(){
   vim $HOME/functions/${1}.func
+  echo source $HOME/functions/${1}.func
 }
 
 function _DECIDE_EDIT(){

@@ -32,7 +32,7 @@ allow-ssh
 #           ;;
 #    esac
 #done
-LOCATION=${PWD}
+LOCATION=${LOCATION:-$PWD}
 
 
 if [[ $# == 0 ]]; then #just connect

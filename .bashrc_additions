@@ -20,6 +20,7 @@ sourceScripts(){
     echo
     echo "Sourced functions : [$(show functions | tr '\n' '\t')]"
     source <(cat $SCRIPTS_DIR/*.func)
+    #while read line; do export -f $line; done <<< $(funcs)
     declare -F | awk '{ print $3 }' > $ENV_FUNCTIONS
     functions
     echo
