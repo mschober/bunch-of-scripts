@@ -36,25 +36,31 @@ function _gitp4 () {
    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
 }
 
+function _skrup() {
+   local cur opts
+   cur="${COMP_WORDS[COMP_CWORD]}"
+   opts="$(home-scripts | grep -v '/')"
+   COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+}
+
+
 #== Start BashRC Changs ==#
+home-scripts | grep -v "/"
 
 sourceScripts
 #sourceDB2_Profile
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-function remote_run(){
-  export FAB_ENV=/Users/mschober/dev/lng/python/manual/env
-  hosts="$(seq -f $HOST_PREFIX%02g $HOST_COUNT | paste -sd "," -)"
-  $FAB_ENV/bin/fab -H "$hosts" -- "$@"
-}
-
-
 #fullPath
 
 _gitp4
 complete -o nospace -F _gitp4 git-p4
 complete -o nospace -F _gitp4 gp
+
+_skrup
+complete -o nospace -F _skrup edit
+complete -o nospace -F _skrup show
 
 # http://maketecheasier.com/8-useful-and-interesting-bash-prompts/2009/09/04
 #PS1="\n\[\033[1;37m\]\342\224\214($(if [[ ${EUID} == 0 ]]; then echo '\[\033[01;31m\]\h'; else echo '\[\033[01;34m\]\u@\h'; fi)\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\$?\[\033[1;37m\])\342\224\200(\[\033[1;34m\]\@ \d\[\033[1;37m\])\[\033[1;37m\]\n\342\224\224\342\224\200(\[\033[1;32m\]\w\[\033[1;37m\])\342\224\200(\[\033[1;32m\]\$(ls -1 | wc -l | sed 's: ::g') files, \$(ls -lah | grep -m 1 total | sed 's/total //')b\[\033[1;37m\])\342\224\200> \[\033[0m\]"
