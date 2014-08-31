@@ -10,6 +10,7 @@ COMMAND=${3:-""}
 #[[ $BUCKET = $NO_BUCKET_ERROR ]] && echo -e "Script: $SCRIPTNAME\n$NO_BUCKET_ERROR\nExiting" && exit 1
 
 BINPATH=$HOME/bin
+MANPATH=$HOME/man/man8
 SCRIPTPATH=$BINPATH/$BUCKET
 FULLPATH=$SCRIPTPATH/$SCRIPTNAME
 LINKPATH=$BINPATH/$SCRIPTNAME
@@ -35,3 +36,8 @@ fi
 echo "Created new script, temporarily linking to: $(file -h $LINKPATH)"
 echo "With content: "
 cat $FULLPATH
+
+MAN_TEMPLATE=$HOME/man/man_template.txt
+sed "s/nuseradd/$SCRIPTNAME/g" $MAN_TEMPLATE > $MANPATH/$SCRIPTNAME.1
+gzip $MANPATH/$SCRIPTNAME.1
+

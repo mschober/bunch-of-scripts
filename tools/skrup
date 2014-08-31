@@ -1,0 +1,9 @@
+#!/bin/bash
+set -o nounset
+
+
+function _USAGE(){
+  echo "skrup install <module>"
+}
+
+_USAGE
