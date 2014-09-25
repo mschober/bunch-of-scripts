@@ -38,5 +38,8 @@ LOCATION=${LOCATION:-$PWD}
 if [[ $# == 0 ]]; then #just connect
     ssh $USER@$CONNECTION
 else #pass commands
-    ssh -t $CONNECTION "cd $LOCATION; $@"
+    #if egrep --silent "karmalab.net|idx.expedmz.com"; then
+    #  HIDE_WELCOME="2> /dev/null"
+    #fi
+    ssh -t $CONNECTION "cd $LOCATION; $@" $HIDE_WELCOME
 fi

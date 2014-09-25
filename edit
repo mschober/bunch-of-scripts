@@ -8,7 +8,7 @@ function _EDIT_ALIAS(){
   echo "create a temp file, save the edits from vim, sed the changes into aliases"
   echo "create a directory with a file for each alias, the file has the alias definition"
   echo "generate .bash_aliases by catting all the files together from $HOME/aliases"
-  echo "open the alias the same was as opening a funciton"
+  echo "open the alias the same way as opening a function"
   grep "alias $1=" $HOME/.bash_aliases
 }
 

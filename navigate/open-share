@@ -11,6 +11,10 @@ function _OPEN_SHARE(){
   open $(sed 's/^/smb:/' <<< "$1")
 }
 
+function _OPEN_HOSTNAME(){
+  open "smb://$1"
+}
+
 function deal_with_backslashes(){
   read -r SHARE_PATH
   echo -E "$SHARE_PATH"
@@ -25,3 +29,6 @@ grep --silent '^file:' <<< "$SHARE_PATH" \
 
 grep --silent '^//' <<< "$SHARE_PATH" \
   && _OPEN_SHARE "$SHARE_PATH"
+
+grep --silent '/' <<< "$SHARE_PATH" \
+  || _OPEN_HOSTNAME "$SHARE_PATH"
