@@ -208,12 +208,11 @@
 # 
 # alias cd=cd_func
 
-time source $HOME/.bashrc_additions
-export CATALINA_HOME=$HOME/Tomcat/apache-tomcat-7.0.50
+#time source $HOME/.bashrc_additions
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added for virtualenvwrapper
-export WORKON_HOME=/Users/mschober/.virtualenvs
-export PROJECT_HOME=/Users/mschober/projects
+export WORKON_HOME=/home/mschober/.virtualenvs
+export PROJECT_HOME=/home/mschober/projects
 source /usr/local/bin/virtualenvwrapper.sh
