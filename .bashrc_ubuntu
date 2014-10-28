@@ -113,6 +113,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+time source .bashrc_additions
+
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/projects/py
 source /usr/local/bin/virtualenvwrapper.sh

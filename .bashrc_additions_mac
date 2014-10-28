@@ -45,18 +45,18 @@ function _skrup() {
 
 
 #== Start BashRC Changs ==#
-home-scripts | grep -v "/"
+#home-scripts | grep -v "/"
 
-sourceScripts
+#sourceScripts
 #sourceDB2_Profile
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
 #fullPath
 
-_gitp4
-complete -o nospace -F _gitp4 git-p4
-complete -o nospace -F _gitp4 gp
+#_gitp4
+#complete -o nospace -F _gitp4 git-p4
+#complete -o nospace -F _gitp4 gp
 
 _skrup
 complete -o nospace -F _skrup edit
