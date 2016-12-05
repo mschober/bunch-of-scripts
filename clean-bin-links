@@ -1,4 +1,4 @@
 #!/bin/bash
 set -o nounset
 
-find $HOME/bin -maxdepth 1 -type l -exec rm {} \;
+find $BASH_HOME/bin -maxdepth 1 -type l -exec rm {} \;
